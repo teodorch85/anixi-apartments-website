@@ -1,0 +1,32 @@
+{
+  "slug": "room-103",
+  "number": "103",
+  "type": "studio",
+  "name": {
+    "en": "Studio 103",
+    "el": "Στούντιο 103"
+  },
+  "guests": 3,
+  "renovated": false,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 103 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace.</p>",
+    "el": "<p>Το Στούντιο 103 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/103/38011800-255341468407231-2421727729440260096-n.jpg",
+  "photos": [
+    "/media/rooms/103/38011800-255341468407231-2421727729440260096-n.jpg",
+    "/media/rooms/103/38085921-255341591740552-581047055821045760-n.jpg",
+    "/media/rooms/103/38085591-255341425073902-5256106416212541440-n.jpg",
+    "/media/rooms/103/20160707-140624.jpg"
+  ],
+  "order": 103
+}

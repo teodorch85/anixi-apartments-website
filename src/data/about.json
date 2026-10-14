@@ -1,0 +1,69 @@
+{
+  "title": {
+    "en": "About Anixi Apartments",
+    "el": "Σχετικά με τα Anixi Apartments"
+  },
+  "body": {
+    "en": "<h2>About Anixi Apartments</h2>\n<p>Anixi Apartments are located approximately 5 minutes walk from the picturesque little fishing village of Sisi and they are within 1500m of the main sandy beach, and 300m from a small manmade beach.</p>\n<p>The complex is built in traditional Cretan style and has a lovely swimming pool, pool-bar/restaurant with free Wi-Fi access around the bar and pool area, and a large area around the pool for long sunbathing hours overlooking the clear blue water of the Aegean sea, just 30m away.</p>\n<p>Studios with a capacity of up to 3 persons are mostly with a twin / double bed and a separate bed for the 3rd person. All rooms are equipped with a kitchenette (2-ring cooker, fridge) safety deposit box (charged extra), a bathroom with shower and WC, air conditioning (charged extra), and a balcony or terrace overlooking the sea. Apartments with a capacity of up to 4 persons are similar but they have an extra separate bedroom from the studios.</p>\n<p><strong>Reception is open from 08:30 to 01:00. Guests arriving at different times should contact us prior to arrival either by email or by phone so that we can arrange their check-in.</strong></p>",
+    "el": "<h2>Σχετικά με τα Anixi Apartments</h2><p>Τα Anixi Apartments βρίσκονται περίπου 5 λεπτά με τα πόδια από το γραφικό ψαροχώρι της Σίσι, σε απόσταση 1.500 μέτρων από την κεντρική αμμουδιά και 300 μέτρων από μια μικρή τεχνητή παραλία.</p><p>Το συγκρότημα είναι χτισμένο σε παραδοσιακό κρητικό ρυθμό και διαθέτει όμορφη πισίνα, pool bar/εστιατόριο με δωρεάν Wi-Fi γύρω από το μπαρ και την πισίνα, καθώς και μεγάλο χώρο γύρω από την πισίνα για ατελείωτες ώρες ηλιοθεραπείας με θέα στα καταγάλανα νερά του Αιγαίου, μόλις 30 μέτρα μακριά.</p><p>Τα στούντιο χωρητικότητας έως 3 ατόμων διαθέτουν συνήθως δύο μονά ή ένα διπλό κρεβάτι και ξεχωριστό κρεβάτι για το 3ο άτομο. Όλα τα δωμάτια διαθέτουν κουζινάκι (εστίες, ψυγείο), θυρίδα ασφαλείας (με επιπλέον χρέωση), μπάνιο με ντους και WC, κλιματισμό (με επιπλέον χρέωση) και μπαλκόνι ή βεράντα με θέα στη θάλασσα. Τα διαμερίσματα χωρητικότητας έως 4 ατόμων είναι παρόμοια, αλλά διαθέτουν επιπλέον ξεχωριστό υπνοδωμάτιο.</p><p><strong>Η υποδοχή λειτουργεί από τις 08:30 έως τη 01:00. Οι επισκέπτες που φτάνουν άλλη ώρα παρακαλούνται να επικοινωνήσουν μαζί μας πριν την άφιξη, με e-mail ή τηλεφωνικά, ώστε να κανονίσουμε το check-in.</strong></p>"
+  },
+  "image": "/media/about/20240721-194708-copy.jpg",
+  "features": [
+    {
+      "label": {
+        "en": "Air-conditioned",
+        "el": "Κλιματισμός"
+      },
+      "icon": "ac"
+    },
+    {
+      "label": {
+        "en": "Swimming pool",
+        "el": "Πισίνα"
+      },
+      "icon": "pool"
+    },
+    {
+      "label": {
+        "en": "Free wi-fi",
+        "el": "Δωρεάν Wi-Fi"
+      },
+      "icon": "wifi"
+    },
+    {
+      "label": {
+        "en": "Restaurant",
+        "el": "Εστιατόριο"
+      },
+      "icon": "restaurant"
+    },
+    {
+      "label": {
+        "en": "Breakfast",
+        "el": "Πρωινό"
+      },
+      "icon": "breakfast"
+    },
+    {
+      "label": {
+        "en": "Pool Bar",
+        "el": "Pool Bar"
+      },
+      "icon": "bar"
+    },
+    {
+      "label": {
+        "en": "Only 12+",
+        "el": "Μόνο 12+"
+      },
+      "icon": "adults"
+    },
+    {
+      "label": {
+        "en": "Sea View",
+        "el": "Θέα θάλασσα"
+      },
+      "icon": "sea"
+    }
+  ]
+}

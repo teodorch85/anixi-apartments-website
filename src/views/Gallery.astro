@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { gallery, thumb } from '../lib/data';
+import { t, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const title = t(gallery.title, lang);
+---
+<Base lang={lang} title={title} path="/gallery/">
+  <div class="banner plain"><h1>{title}</h1></div>
+  <section class="section">
+    <div class="wrap">
+      <div class="filters" role="tablist">
+        <a href="#" data-filter="*" aria-current="page">{ui('allPhotos', lang)}</a>
+        {gallery.categories.map((c, i) => <a href="#" data-filter={String(i)}>{t(c.name, lang)}</a>)}
+      </div>
+      <div class="masonry">
+        {gallery.categories.flatMap((c, i) => c.photos.map((p) => (
+          <a href={p} data-lightbox="gallery" data-cat={String(i)}><img src={thumb(p, 960)} alt={t(c.name, lang)} loading="lazy" /></a>
+        )))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.filters a')];
+  const items = [...document.querySelectorAll<HTMLAnchorElement>('.masonry a')];
+  links.forEach((l) => l.addEventListener('click', (e) => {
+    e.preventDefault();
+    links.forEach((x) => x.removeAttribute('aria-current'));
+    l.setAttribute('aria-current', 'page');
+    const f = l.dataset.filter;
+    items.forEach((it) => (it.hidden = f !== '*' && it.dataset.cat !== f));
+  }));
+</script>

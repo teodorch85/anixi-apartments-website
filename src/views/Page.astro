@@ -1,0 +1,59 @@
+---
+/** Generic text page: title banner, text with photo, optional features, photo gallery and extra text. */
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import BookBox from '../components/BookBox.astro';
+import { thumb } from '../lib/data';
+import { t, type Lang, type T } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  path: string;
+  data: { title: T; body: T; image?: string; gallery?: string[]; extra?: T; features?: { label: T; icon: string }[] };
+  book?: boolean;
+}
+const { lang, path, data, book = true } = Astro.props;
+const title = t(data.title, lang);
+const body = t(data.body, lang);
+const extra = data.extra ? t(data.extra, lang) : '';
+---
+<Base lang={lang} title={title} path={path} image={data.image} description={body.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160)}>
+  {data.image
+    ? <div class="banner" style={`background-image:url('${thumb(data.image, 960)}')`}><h1>{title}</h1></div>
+    : <div class="banner plain"><h1>{title}</h1></div>}
+
+  <section class="section">
+    <div class:list={['wrap', { split: !!data.image }]}>
+      <div class="prose" set:html={body} />
+      {data.image && <img src={thumb(data.image, 960)} alt="" width="960" height="1280" loading="lazy" />}
+    </div>
+  </section>
+
+  {data.features && data.features.length > 0 && (
+    <section class="section-sm soft">
+      <div class="wrap amenities" style="grid-template-columns:repeat(auto-fill,minmax(170px,1fr))">
+        {data.features.map((f) => <div class="amenity"><Icon name={f.icon} />{t(f.label, lang)}</div>)}
+      </div>
+    </section>
+  )}
+
+  {data.gallery && data.gallery.length > 0 && (
+    <section class="section-sm">
+      <div class="wrap masonry">
+        {data.gallery.map((p) => (
+          <a href={p} data-lightbox="page"><img src={thumb(p, 960)} alt="" loading="lazy" /></a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {extra && (
+    <section class="section-sm">
+      <div class="wrap prose" set:html={extra} />
+    </section>
+  )}
+
+  <slot />
+
+  {book && <div class="wrap" style="padding:40px 20px 90px"><BookBox lang={lang} /></div>}
+</Base>

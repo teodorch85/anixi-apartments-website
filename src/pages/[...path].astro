@@ -1,0 +1,53 @@
+---
+/**
+ * Every page of the site, in English (/about/) and Greek (/el/about/).
+ * Addresses are the same as on the old WordPress site so Google links keep working.
+ */
+import Home from '../views/Home.astro';
+import Rooms from '../views/Rooms.astro';
+import Room from '../views/Room.astro';
+import Page from '../views/Page.astro';
+import Prices from '../views/Prices.astro';
+import Gallery from '../views/Gallery.astro';
+import Contact from '../views/Contact.astro';
+import Offers from '../views/Offers.astro';
+import { rooms, roomGroups, about, pool, restaurant, privacy } from '../lib/data';
+import { LANGS, type Lang } from '../lib/i18n';
+
+export function getStaticPaths() {
+  const routes: { page: string; props?: Record<string, unknown> }[] = [
+    { page: '' },
+    { page: 'accommodations-2' },
+    ...roomGroups.map((g) => ({ page: g.slug, props: { group: g } })),
+    ...rooms.map((r) => ({ page: `accommodation/${r.slug}`, props: { room: r } })),
+    { page: 'about' },
+    { page: 'gallery' },
+    { page: 'swimming-pool' },
+    { page: 'restaurant-and-pool-bar' },
+    { page: 'prices' },
+    { page: 'offers' },
+    { page: 'contact' },
+    { page: 'privacy-policy-2' },
+  ];
+  return LANGS.flatMap((lang) =>
+    routes.map(({ page, props }) => ({
+      params: { path: [lang === 'el' ? 'el' : '', page].filter(Boolean).join('/') || undefined },
+      props: { lang, page, ...props },
+    })),
+  );
+}
+
+const { lang, page, group, room } = Astro.props as { lang: Lang; page: string; group?: any; room?: any };
+---
+{page === '' && <Home lang={lang} />}
+{page === 'accommodations-2' && <Rooms lang={lang} />}
+{group && <Rooms lang={lang} group={group} />}
+{room && <Room lang={lang} room={room} />}
+{page === 'about' && <Page lang={lang} path="/about/" data={about} />}
+{page === 'gallery' && <Gallery lang={lang} />}
+{page === 'swimming-pool' && <Page lang={lang} path="/swimming-pool/" data={pool} />}
+{page === 'restaurant-and-pool-bar' && <Page lang={lang} path="/restaurant-and-pool-bar/" data={restaurant} />}
+{page === 'prices' && <Prices lang={lang} />}
+{page === 'offers' && <Offers lang={lang} />}
+{page === 'contact' && <Contact lang={lang} />}
+{page === 'privacy-policy-2' && <Page lang={lang} path="/privacy-policy-2/" data={privacy} book={false} />}

@@ -1,0 +1,36 @@
+---
+/**
+ * Full-width hero: the poster photo shows instantly, the video fades in only once the browser
+ * can play it through without stopping. Phones / slow connections get the 720p file,
+ * data-saver or reduced-motion users keep the photo.
+ */
+interface Props { hd: string; sd: string; poster: string; alt?: string }
+const { hd, sd, poster, alt = '' } = Astro.props;
+---
+<section class="hero" style={`background-image:url('${poster}')`} aria-label={alt}>
+  <video muted loop playsinline preload="none" poster={poster} data-hd={hd} data-sd={sd} aria-hidden="true"></video>
+</section>
+
+<style>
+  .hero video { opacity: 0; transition: opacity 1.2s ease; }
+  .hero video.ready { opacity: 1; }
+</style>
+
+<script>
+  const v = document.querySelector<HTMLVideoElement>('.hero video');
+  if (v) {
+    const conn = (navigator as any).connection;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = conn?.saveData;
+    const slow = conn && /(^|-)2g$|^slow-2g$/.test(conn.effectiveType || '');
+    if (!reduce && !saveData && !slow) {
+      const small = innerWidth < 900 || conn?.effectiveType === '3g';
+      v.src = (small ? v.dataset.sd : v.dataset.hd) || '';
+      v.preload = 'auto';
+      v.addEventListener('canplaythrough', () => {
+        v.play().then(() => v.classList.add('ready')).catch(() => {});
+      }, { once: true });
+      v.load();
+    }
+  }
+</script>

@@ -1,0 +1,32 @@
+{
+  "slug": "room-11",
+  "number": "11",
+  "type": "studio",
+  "name": {
+    "en": "Studio 11",
+    "el": "Στούντιο 11"
+  },
+  "guests": 3,
+  "renovated": false,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 11 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace.</p>",
+    "el": "<p>Το Στούντιο 11 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/11/38036863-255330741741637-6462451279552577536-n.jpg",
+  "photos": [
+    "/media/rooms/11/38036863-255330741741637-6462451279552577536-n.jpg",
+    "/media/rooms/11/38134347-255329391741772-8489231928329764864-n-1.jpg",
+    "/media/rooms/11/38085164-255330581741653-4135545372762177536-n.jpg",
+    "/media/rooms/11/38085469-255329568408421-2382706581461532672-n.jpg"
+  ],
+  "order": 11
+}

@@ -1,0 +1,66 @@
+{
+  "title": {
+    "en": "Photo Gallery",
+    "el": "Φωτογραφίες"
+  },
+  "categories": [
+    {
+      "name": {
+        "en": "Hotel",
+        "el": "Ξενοδοχείο"
+      },
+      "photos": [
+        "/media/gallery/20240430-095808-1.jpg",
+        "/media/gallery/20240430-105857-1.jpg",
+        "/media/gallery/20240701-132535-copy.jpg",
+        "/media/gallery/20240430-095718-1.jpg",
+        "/media/gallery/20240430-095612-1.jpg",
+        "/media/gallery/20240430-113639-1.jpg",
+        "/media/pool/20240528-201230.jpg",
+        "/media/gallery/20240422-093449-1.jpg",
+        "/media/gallery/20240430-113639-1.jpg",
+        "/media/home/dji-0224.jpg",
+        "/media/gallery/20240624-151647-copy.jpg",
+        "/media/gallery/20240430-105923.jpg",
+        "/media/gallery/20240630-125101-copy.jpg"
+      ]
+    },
+    {
+      "name": {
+        "en": "Location",
+        "el": "Περιοχή"
+      },
+      "photos": [
+        "/media/gallery/1000x-6.jpg",
+        "/media/gallery/329278812-751394039736714-5263520093535688724-n.jpg",
+        "/media/gallery/1000x-15.jpg",
+        "/media/gallery/1920x-20.jpg",
+        "/media/gallery/1000x-1.jpg",
+        "/media/gallery/1000x-14.jpg",
+        "/media/gallery/kato-apo-1000-3.jpg",
+        "/media/gallery/1000x-10.jpg",
+        "/media/gallery/210610997-10219020627652016-5374001002965045776-n.jpg"
+      ]
+    },
+    {
+      "name": {
+        "en": "Restaurant & Pool",
+        "el": "Εστιατόριο & Πισίνα"
+      },
+      "photos": [
+        "/media/pool/20240508-203533.jpg",
+        "/media/pool/20240808-133353.jpg",
+        "/media/home/dji-0302.jpg",
+        "/media/gallery/20240721-194708-copy.jpg",
+        "/media/home/20240529-202440.jpg",
+        "/media/gallery/20240529-201448.jpg",
+        "/media/home/20240518-103538.jpg",
+        "/media/gallery/20240528-201255.jpg",
+        "/media/gallery/img-20240624-212359-215.webp",
+        "/media/home/20240624-201953-copy.jpg",
+        "/media/gallery/20240909-102132.jpg",
+        "/media/home/20240502-195350.jpg"
+      ]
+    }
+  ]
+}

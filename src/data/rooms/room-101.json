@@ -1,0 +1,35 @@
+{
+  "slug": "room-101",
+  "number": "101",
+  "type": "studio",
+  "name": {
+    "en": "Studio 101",
+    "el": "Στούντιο 101"
+  },
+  "guests": 2,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 101 is a bright studio for up to 2 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Στούντιο 101 είναι ένα φωτεινό στούντιο για έως 2 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/101/20200213-170040-1-1.jpg",
+  "photos": [
+    "/media/rooms/101/20200213-170040-1-1.jpg",
+    "/media/rooms/101/20200213-170033.jpg",
+    "/media/rooms/101/86276291-548026965805345-2700547647562842112-n.jpg",
+    "/media/rooms/101/20200213-170040-1.jpg",
+    "/media/rooms/101/84326170-548026742472034-1796310899787563008-n.jpg",
+    "/media/rooms/101/20200213-170002.jpg",
+    "/media/rooms/101/86295440-548026929138682-5891019259642904576-n.jpg"
+  ],
+  "order": 101
+}

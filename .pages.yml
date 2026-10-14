@@ -1,0 +1,364 @@
+# Pages CMS – editor for anixi-apartments.gr
+# Every text has a Greek and an English box. If one is left empty, the other is shown on the site.
+# Changes go live automatically ~1–2 minutes after "Save".
+
+media:
+  input: public/media
+  output: /media
+  rename: safe
+  categories: [image, document, video]
+
+components:
+  t_string:
+    type: object
+    fields:
+      - { name: el, label: Ελληνικά, type: string }
+      - { name: en, label: English, type: string }
+  t_rich:
+    type: object
+    fields:
+      - { name: el, label: Ελληνικά, type: rich-text, options: { format: html, media: false, switcher: false } }
+      - { name: en, label: English, type: rich-text, options: { format: html, media: false, switcher: false } }
+  photo:
+    type: image
+    description: "Οριζόντια φωτογραφία, τουλάχιστον 1600 pixel πλάτος. Μέγιστο μέγεθος αρχείου 2 MB (αλλιώς βγαίνει «upload failed 413») – μικρύνετε πρώτα σε πλάτος 1920 pixel."
+    options: { extensions: [jpg, jpeg, png, webp], rename: safe }
+  photos:
+    type: image
+    description: "Μπορείτε να προσθέσετε πολλές μαζί. Η σειρά εδώ είναι η σειρά στη σελίδα (σύρετε για αλλαγή σειράς). Για να βγάλετε μια φωτογραφία πατήστε τον κάδο ΕΔΩ – όχι διαγραφή από τα Μέσα. Κάθε αρχείο έως 2 MB (πλάτος 1920 pixel)."
+    options: { multiple: true, extensions: [jpg, jpeg, png, webp], rename: safe }
+
+content:
+  # ================================================================ Τιμές
+  - name: prices
+    label: "💶 Τιμές"
+    type: file
+    path: src/data/prices.json
+    format: json
+    fields:
+      - { name: title, label: Τίτλος σελίδας, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/prices/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+      - { name: season, label: Υπότιτλος, component: t_string, description: "Εμφανίζεται πάνω από τον πίνακα." }
+      - name: seasons
+        label: Περίοδοι (ημερομηνίες)
+        description: "Οι τρεις περίοδοι του τιμοκαταλόγου. Αλλάξτε μόνο τις ημερομηνίες κάθε χρόνο."
+        type: object
+        fields:
+          - name: low
+            label: "Χαμηλή περίοδος"
+            type: object
+            fields:
+              - { name: name, label: Όνομα, component: t_string }
+              - { name: dates, label: Ημερομηνίες, component: t_string, description: "Π.χ. 01/05 – 15/05 & 05/10 – 30/10" }
+          - name: mid
+            label: "Μεσαία περίοδος"
+            type: object
+            fields:
+              - { name: name, label: Όνομα, component: t_string }
+              - { name: dates, label: Ημερομηνίες, component: t_string }
+          - name: high
+            label: "Υψηλή περίοδος"
+            type: object
+            fields:
+              - { name: name, label: Όνομα, component: t_string }
+              - { name: dates, label: Ημερομηνίες, component: t_string }
+      - name: categories
+        label: Κατηγορίες δωματίων & τιμές
+        description: "Μία κάρτα για κάθε ομάδα δωματίων με την ίδια τιμή. Γράψτε την τιμή όπως θέλετε να φαίνεται, π.χ. 45€."
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.rooms.el} — {fields.low} / {fields.mid} / {fields.high}" } }
+        fields:
+          - { name: rooms, label: Δωμάτια, component: t_string, description: "Π.χ. «Στούντιο 11, 12»" }
+          - { name: persons, label: Άτομα, component: t_string, description: "Π.χ. «2–3 άτομα» (προαιρετικό)" }
+          - { name: low, label: "Τιμή χαμηλής περιόδου", type: string }
+          - { name: mid, label: "Τιμή μεσαίας περιόδου", type: string }
+          - { name: high, label: "Τιμή υψηλής περιόδου", type: string }
+      - { name: footnote, label: Υποσημείωση κάτω από τον πίνακα, component: t_string }
+      - { name: notes, label: Όροι κράτησης & ακύρωσης, component: t_rich }
+
+  # ================================================================ Προσφορές
+  - name: offers
+    label: "🏷️ Προσφορές"
+    type: file
+    path: src/data/offers.json
+    format: json
+    fields:
+      - { name: title, label: Τίτλος σελίδας, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/offers/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+      - { name: intro, label: Εισαγωγικό κείμενο, component: t_rich }
+      - name: items
+        label: Προσφορές
+        description: "Μία γραμμή ανά προσφορά. Απενεργοποιήστε το «Ενεργή» για να κρυφτεί χωρίς να σβηστεί."
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.text.el}" } }
+        fields:
+          - { name: active, label: Ενεργή (εμφανίζεται στη σελίδα), type: boolean, default: true }
+          - { name: text, label: Κείμενο προσφοράς, component: t_string }
+      - { name: note, label: Κείμενο στο τέλος, component: t_rich }
+      - { name: image, label: Φωτογραφία κορυφής (προαιρετική), component: photo, options: { path: public/media/offers } }
+
+  # ================================================================ Δωμάτια
+  - name: rooms
+    label: "🛏️ Δωμάτια"
+    type: collection
+    path: src/data/rooms
+    format: json
+    filename: "room-{fields.number}.json"
+    view:
+      fields: [name.el, guests, availability.el]
+      primary: name.el
+      sort: [order]
+      default: { sort: order, order: asc }
+    fields:
+      - name: availability
+        label: "📅 Σημείωση διαθεσιμότητας"
+        description: "Π.χ. «Κλεισμένο έως 15/08» ή «Διαθέσιμο από 01/09». Εμφανίζεται στην κάρτα και στη σελίδα του δωματίου. Αφήστε κενό αν δεν χρειάζεται. 👁 Όλα τα δωμάτια: https://www.anixi-apartments.gr/accommodations-2/"
+        component: t_string
+      - { name: name, label: Όνομα δωματίου, component: t_string, required: true, description: "Π.χ. «Στούντιο 101» / «Studio 101»" }
+      - { name: number, label: Αριθμός δωματίου, type: string, required: true }
+      - name: type
+        label: Τύπος
+        type: select
+        options: { values: [{ name: studio, label: Στούντιο }, { name: apartment, label: Διαμέρισμα }] }
+      - { name: guests, label: Μέγιστος αριθμός ατόμων, type: number, required: true, description: "Καθορίζει σε ποια κατηγορία εμφανίζεται (έως 2 / 3 / 4 άτομα)." }
+      - { name: renovated, label: Ανακαινισμένο, type: boolean }
+      - name: amenities
+        label: Παροχές
+        type: select
+        options:
+          multiple: true
+          values:
+            - { name: ac, label: Κλιματισμός }
+            - { name: wifi, label: Wi-Fi }
+            - { name: sea, label: Θέα θάλασσα }
+            - { name: pool, label: Θέα πισίνα }
+            - { name: kitchen, label: Κουζινάκι }
+            - { name: balcony, label: Μπαλκόνι }
+            - { name: fridge, label: Ψυγείο }
+            - { name: tv, label: Τηλεόραση }
+            - { name: safe, label: Θυρίδα ασφαλείας }
+      - { name: description, label: Περιγραφή, component: t_rich }
+      - { name: cover, label: Κεντρική φωτογραφία (κάρτα & κορυφή σελίδας), component: photo, options: { path: public/media/rooms } }
+      - { name: photos, label: Φωτογραφίες δωματίου, component: photos, options: { path: public/media/rooms } }
+      - { name: order, label: Σειρά εμφάνισης, type: number, description: "Μικρότερος αριθμός = εμφανίζεται πρώτο." }
+      - { name: hidden, label: Απόκρυψη από τη σελίδα, type: boolean, description: "Για δωμάτια που δεν διατίθενται προσωρινά." }
+      - { name: slug, label: "Διεύθυνση σελίδας (π.χ. room-101)", type: string, description: "Μην την αλλάζετε σε υπάρχον δωμάτιο – χαλάνε οι σύνδεσμοι από Google. Για νέο δωμάτιο γράψτε π.χ. room-109." }
+
+  # ================================================================ Σελίδες
+  - name: pages
+    label: "📄 Σελίδες"
+    type: group
+    items:
+      - name: home
+        label: Αρχική σελίδα
+        type: file
+        path: src/data/home.json
+        format: json
+        fields:
+          - name: intro
+            description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)"
+            label: Εισαγωγή (κάτω από το βίντεο)
+            type: object
+            fields:
+              - { name: title, label: Τίτλος, component: t_string }
+              - { name: text, label: Κείμενο, component: t_rich }
+              - { name: image, label: Φωτογραφία, component: photo, options: { path: public/media/home } }
+              - { name: button, label: Κείμενο κουμπιού, component: t_string }
+          - name: highlights
+            label: Highlights (φωτογραφίες σε κύλιση)
+            type: object
+            fields:
+              - { name: title, label: Τίτλος, component: t_string }
+              - name: items
+                label: Φωτογραφίες
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{fields.label.el}" } }
+                fields:
+                  - { name: label, label: Λεζάντα, component: t_string }
+                  - { name: image, label: Φωτογραφία, component: photo, options: { path: public/media/home } }
+          - name: rooms
+            label: Ενότητα «Τα δωμάτιά μας»
+            type: object
+            fields:
+              - { name: title, label: Τίτλος, component: t_string }
+              - { name: text, label: Κείμενο, component: t_string }
+          - name: facilities
+            label: Ενότητα «Παροχές»
+            type: object
+            fields:
+              - { name: title, label: Τίτλος, component: t_string }
+              - name: items
+                label: Κάρτες
+                type: object
+                list: { collapsible: { collapsed: true, summary: "{fields.label.el}" } }
+                fields:
+                  - { name: label, label: Λεζάντα, component: t_string }
+                  - { name: image, label: Φωτογραφία, component: photo, options: { path: public/media/home } }
+                  - { name: link, label: "Σύνδεσμος", type: string, description: "Π.χ. /swimming-pool/ ή /restaurant-and-pool-bar/" }
+          - name: offers
+            label: Ενότητα «Προσφορές»
+            type: object
+            fields:
+              - { name: show, label: Εμφάνιση στην αρχική, type: boolean }
+              - { name: title, label: Τίτλος, component: t_string }
+              - { name: text, label: Κείμενο, component: t_rich }
+              - { name: image, label: Φωτογραφία, component: photo, options: { path: public/media/home } }
+              - { name: button, label: Κείμενο κουμπιού, component: t_string }
+          - name: reviews
+            label: Ενότητα «Κριτικές»
+            type: object
+            fields:
+              - { name: show, label: Εμφάνιση στην αρχική, type: boolean }
+              - { name: title, label: Τίτλος, component: t_string }
+          - name: hero
+            label: "Βίντεο κορυφής (για προχωρημένους)"
+            description: "Για νέο βίντεο στείλτε το στον διαχειριστή – χρειάζεται συμπίεση σε δύο μεγέθη ώστε να παίζει γρήγορα."
+            type: object
+            fields:
+              - { name: poster, label: Φωτογραφία που φαίνεται μέχρι να ξεκινήσει το βίντεο, component: photo, options: { path: public/media/home } }
+              - { name: video_hd, label: Βίντεο για υπολογιστές (1080p), type: file, options: { path: public/media/home } }
+              - { name: video_sd, label: Βίντεο για κινητά (720p), type: file, options: { path: public/media/home } }
+
+      - name: about
+        label: Σχετικά με εμάς
+        type: file
+        path: src/data/about.json
+        format: json
+        fields:
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/about/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - { name: body, label: Κείμενο, component: t_rich }
+          - { name: image, label: Φωτογραφία, component: photo, options: { path: public/media/about } }
+          - name: features
+            label: Παροχές ξενοδοχείου (εικονίδια)
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.label.el}" } }
+            fields:
+              - { name: label, label: Λεζάντα, component: t_string }
+              - name: icon
+                label: Εικονίδιο
+                type: select
+                options:
+                  values:
+                    - { name: ac, label: Κλιματισμός }
+                    - { name: pool, label: Πισίνα }
+                    - { name: wifi, label: Wi-Fi }
+                    - { name: restaurant, label: Εστιατόριο }
+                    - { name: breakfast, label: Πρωινό }
+                    - { name: bar, label: Μπαρ }
+                    - { name: adults, label: "12+" }
+                    - { name: sea, label: Θάλασσα }
+                    - { name: kitchen, label: Κουζίνα }
+                    - { name: parking, label: Πάρκινγκ }
+                    - { name: star, label: Αστέρι }
+
+      - name: pool
+        label: Πισίνα
+        type: file
+        path: src/data/pool.json
+        format: json
+        fields:
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/swimming-pool/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - { name: body, label: Κείμενο, component: t_rich }
+          - { name: image, label: Κεντρική φωτογραφία, component: photo, options: { path: public/media/pool } }
+          - { name: gallery, label: Φωτογραφίες, component: photos, options: { path: public/media/pool } }
+          - { name: extra, label: "Κανόνες πισίνας (κάτω από τις φωτογραφίες)", component: t_rich }
+
+      - name: restaurant
+        label: Εστιατόριο & Pool Bar
+        type: file
+        path: src/data/restaurant.json
+        format: json
+        fields:
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/restaurant-and-pool-bar/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - { name: body, label: Κείμενο, component: t_rich }
+          - { name: image, label: Κεντρική φωτογραφία, component: photo, options: { path: public/media/restaurant } }
+          - { name: gallery, label: Φωτογραφίες, component: photos, options: { path: public/media/restaurant } }
+          - { name: extra, label: "Επιπλέον κείμενο (κάτω από τις φωτογραφίες)", component: t_rich }
+
+      - name: gallery
+        label: Φωτογραφίες (Gallery)
+        type: file
+        path: src/data/gallery.json
+        format: json
+        fields:
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/gallery/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - name: categories
+            label: Κατηγορίες
+            description: "Κάθε κατηγορία γίνεται κουμπί-φίλτρο στη σελίδα."
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.name.el}" } }
+            fields:
+              - { name: name, label: Όνομα κατηγορίας, component: t_string }
+              - { name: photos, label: Φωτογραφίες, component: photos, options: { path: public/media/gallery } }
+
+      - name: privacy
+        label: Πολιτική απορρήτου
+        type: file
+        path: src/data/privacy.json
+        format: json
+        fields:
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/privacy-policy-2/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - { name: body, label: Κείμενο, component: t_rich }
+
+  # ================================================================ Κριτικές
+  - name: reviews
+    label: "⭐ Κριτικές"
+    type: file
+    path: src/data/reviews.json
+    format: json
+    fields:
+      - name: items
+        description: "Στην αρχική εμφανίζονται έως 8 κριτικές με ενεργό το «Εμφάνιση». Αντιγράψτε νέες κριτικές από Google/TripAdvisor. 👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/"
+        label: Κριτικές επισκεπτών
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.name} · {fields.source} · {fields.rating}★" } }
+        fields:
+          - { name: show, label: Εμφάνιση στην αρχική, type: boolean, default: true }
+          - { name: name, label: Όνομα επισκέπτη, type: string }
+          - { name: source, label: Πηγή, type: select, options: { values: [google, tripadvisor, booking, email] } }
+          - { name: rating, label: Αστέρια (1–5), type: number, default: 5 }
+          - { name: date, label: Ημερομηνία, type: date }
+          - { name: text, label: Κείμενο κριτικής, type: text }
+      - { name: google_url, label: Σύνδεσμος για κριτικές Google, type: string }
+      - { name: tripadvisor_url, label: Σύνδεσμος για κριτικές TripAdvisor, type: string }
+
+  # ================================================================ Επικοινωνία & ρυθμίσεις
+  - name: settings
+    label: "⚙️ Επικοινωνία & ρυθμίσεις"
+    type: file
+    path: src/data/settings.json
+    format: json
+    fields:
+      - name: phones
+        description: "Γράψτε με κωδικό χώρας, π.χ. +30 28410 71477 – έτσι λειτουργεί το «πάτα για κλήση» στα κινητά. 👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/contact/"
+        label: Τηλέφωνα
+        type: object
+        list: { collapsible: { collapsed: false, summary: "{fields.number}" } }
+        fields:
+          - { name: label, label: Περιγραφή, component: t_string, description: "Π.χ. «Υποδοχή» / «Κινητό»" }
+          - { name: number, label: Αριθμός, type: string }
+      - { name: emails, label: E-mail, type: string, list: true }
+      - { name: booking_email, label: E-mail κρατήσεων, type: string, description: "Εδώ πηγαίνουν το κουμπί «Κράτηση» και η φόρμα επικοινωνίας." }
+      - { name: whatsapp, label: WhatsApp, type: string, description: "Αριθμός με κωδικό χώρας, π.χ. +306947840190. Αφήστε κενό για να μην εμφανίζεται κουμπί WhatsApp." }
+      - { name: facebook, label: Σελίδα Facebook, type: string }
+      - { name: address, label: Διεύθυνση, component: t_string }
+      - name: advanced
+        label: "Ρυθμίσεις για προχωρημένους"
+        description: "Σπάνια χρειάζεται αλλαγή."
+        type: object
+        fields:
+          - { name: name, label: Όνομα επιχείρησης, type: string }
+          - { name: tagline, label: Υπότιτλος (τίτλος καρτέλας browser), component: t_string }
+          - { name: logo, label: Λογότυπο, type: image, options: { path: public/media/site } }
+          - { name: map_embed, label: "Χάρτης Google (σύνδεσμος embed)", type: text, description: "Google Maps → Κοινοποίηση → Ενσωμάτωση χάρτη → αντιγράψτε μόνο τη διεύθυνση μέσα στο src=\"...\"" }
+          - { name: license, label: Αριθμός ΜΗΤΕ, type: string }
+          - { name: eu_banner, label: Banner ΕΣΠΑ, type: image, options: { path: public/media/site } }
+          - { name: eu_pdf, label: Αρχείο PDF ΕΣΠΑ, type: file, options: { path: public/media/site } }
+
+settings:
+  content:
+    merge: true
+  commit:
+    templates:
+      create: "Νέο: {path} ({userName})"
+      update: "Αλλαγή: {path} ({userName})"
+      delete: "Διαγραφή: {path} ({userName})"
+      rename: "Μετονομασία: {oldPath} → {newPath} ({userName})"

@@ -1,0 +1,37 @@
+{
+  "slug": "room-14",
+  "number": "14",
+  "type": "studio",
+  "name": {
+    "en": "Studio 14",
+    "el": "Στούντιο 14"
+  },
+  "guests": 3,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 14 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Στούντιο 14 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/14/20260420-161105.jpg",
+  "photos": [
+    "/media/rooms/14/20260420-161105.jpg",
+    "/media/rooms/14/20260420-161200.jpg",
+    "/media/rooms/14/20260420-161213.jpg",
+    "/media/rooms/14/20260420-161004.jpg",
+    "/media/rooms/14/20260430-102456.jpg",
+    "/media/rooms/14/14.jpg",
+    "/media/rooms/14/38032725-255338848407493-4379281360901111808-n.jpg",
+    "/media/rooms/14/38188516-255338798407498-4068518443853283328-n.jpg",
+    "/media/rooms/14/img-20130519-094601.jpg"
+  ],
+  "order": 14
+}

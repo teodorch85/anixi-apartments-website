@@ -1,0 +1,58 @@
+# anixi-apartments.gr – static site (no PHP)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Never expose WordPress-style entry points
+RewriteRule ^(wp-admin|wp-login\.php|xmlrpc\.php|wp-json)(/.*)?$ - [F,L]
+
+# Old WordPress addresses -> new pages (keeps Google links working)
+RewriteRule ^home/?$ / [L,R=301]
+RewriteRule ^(.+/)?feed/?$ /$1 [L,R=301]
+RewriteRule ^accommodation-category/(up-to-(two|three|four)-persons)/?$ /$1/ [L,R=301]
+RewriteRule ^accommodation-facility/ /accommodations-2/ [L,R=301]
+RewriteRule ^(up-to-[a-z]+-persons|accommodations-2)/page/[0-9]+/?$ /$1/ [L,R=301]
+RewriteRule ^gallery/category/ /gallery/ [L,R=301]
+RewriteRule ^pool-bar/?$ /restaurant-and-pool-bar/ [L,R=301]
+RewriteRule ^accommodation/room-201-2-2-2/?$ /accommodation/room-204/ [L,R=301]
+# The preview copy lived under /new/ – send old bookmarks to the real pages
+RewriteRule ^new(/(.*))?$ /$2 [L,R=301]
+RewriteRule ^(shop|shop-2|cart|cart-2|checkout|checkout-2|my-account|my-account-2|restaurant-2-2|menu|menu-list|faq|news|services-list|services|sample-page|product|product-category|restaurant|hf_templates|author)(/.*)?$ / [L,R=301]
+RewriteRule ^(booking-account|booking-cancellation|booking-confirmation|search-availability|search-results)(/.*)?$ /contact/ [L,R=301]
+</IfModule>
+
+<Files ".deploy-manifest.json">
+  Require all denied
+</Files>
+# Never execute PHP even if something gets uploaded
+<FilesMatch "\.(php|phtml|phar|php\d)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # pages: always ask the server for the latest version (edits show without a hard refresh)
+  <FilesMatch "\.(html|xml|txt)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  # build files have a unique name per version, so they can be kept for a year
+  <If "%{REQUEST_URI} =~ m#^/_astro/#">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </If>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

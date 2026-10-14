@@ -1,0 +1,36 @@
+{
+  "slug": "room-203",
+  "number": "203",
+  "type": "apartment",
+  "name": {
+    "en": "Apartment 203",
+    "el": "Διαμέρισμα 203"
+  },
+  "guests": 4,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Apartment 203 is a spacious apartment for up to 4 guests with sea view, with a separate bedroom in addition to the main room. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Διαμέρισμα 203 είναι ένα ευρύχωρο διαμέρισμα για έως 4 άτομα με θέα στη θάλασσα, με ξεχωριστό υπνοδωμάτιο εκτός από τον κύριο χώρο. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/203/38167276-255532815054763-2630215307527979008-n-1.jpg",
+  "photos": [
+    "/media/rooms/203/38167276-255532815054763-2630215307527979008-n-1.jpg",
+    "/media/rooms/203/37905906-255533021721409-6434953717807579136-n-1.jpg",
+    "/media/rooms/203/38085548-255533085054736-4387852015384920064-n-1.jpg",
+    "/media/rooms/203/38133453-255532961721415-7356571141667815424-n-1.jpg",
+    "/media/rooms/203/38033419-255532868388091-7003750676496908288-n.jpg",
+    "/media/rooms/203/38065506-255532778388100-99070601867558912-n.jpg",
+    "/media/rooms/203/20240630-113819-copy.jpg",
+    "/media/rooms/203/20240630-113828-copy.jpg"
+  ],
+  "order": 203
+}

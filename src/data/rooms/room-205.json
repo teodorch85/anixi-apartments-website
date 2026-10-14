@@ -1,0 +1,40 @@
+{
+  "slug": "room-205",
+  "number": "205",
+  "type": "studio",
+  "name": {
+    "en": "Studio 205",
+    "el": "Στούντιο 205"
+  },
+  "guests": 3,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 205 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Στούντιο 205 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/gallery/20240430-105923.jpg",
+  "photos": [
+    "/media/gallery/20240430-105923.jpg",
+    "/media/gallery/20240430-105857-1.jpg",
+    "/media/rooms/205/20240430-105923-1.jpg",
+    "/media/rooms/205/20240430-110058-1.jpg",
+    "/media/rooms/205/20240425-164606-1.jpg",
+    "/media/rooms/205/20240430-110034-1.jpg",
+    "/media/rooms/205/20240422-093131-1.jpg",
+    "/media/rooms/205/20240430-110154.jpg",
+    "/media/gallery/20240630-125101-copy.jpg",
+    "/media/rooms/205/20240430-110234.jpg",
+    "/media/rooms/205/20240430-105818-copy.jpg",
+    "/media/rooms/205/20240430-113949-2.jpg"
+  ],
+  "order": 205
+}

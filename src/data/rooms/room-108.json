@@ -1,0 +1,36 @@
+{
+  "slug": "room-108",
+  "number": "108",
+  "type": "studio",
+  "name": {
+    "en": "Studio 108",
+    "el": "Στούντιο 108"
+  },
+  "guests": 2,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 108 is a bright studio for up to 2 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Στούντιο 108 είναι ένα φωτεινό στούντιο για έως 2 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/108/38126020-255546641720047-1149092738830958592-n.jpg",
+  "photos": [
+    "/media/rooms/108/38126020-255546641720047-1149092738830958592-n.jpg",
+    "/media/rooms/108/38046172-255546455053399-5325127167724486656-n.jpg",
+    "/media/rooms/108/20180427-182204.jpg",
+    "/media/rooms/108/20180427-181412.jpg",
+    "/media/rooms/108/20180427-181208.jpg",
+    "/media/rooms/108/20180427-181732.jpg",
+    "/media/rooms/108/20240703-134851-copy.jpg",
+    "/media/rooms/108/20240703-134838-copy.jpg"
+  ],
+  "order": 108
+}

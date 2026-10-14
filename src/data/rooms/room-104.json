@@ -1,0 +1,38 @@
+{
+  "slug": "room-104",
+  "number": "104",
+  "type": "studio",
+  "name": {
+    "en": "Studio 104",
+    "el": "Στούντιο 104"
+  },
+  "guests": 3,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 104 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Στούντιο 104 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/104/20240430-114214.jpg",
+  "photos": [
+    "/media/rooms/104/20240430-114214.jpg",
+    "/media/rooms/104/20240430-114208-1.jpg",
+    "/media/gallery/20240430-113639-1.jpg",
+    "/media/rooms/104/20240430-113706-1.jpg",
+    "/media/rooms/104/20240430-114117-1.jpg",
+    "/media/rooms/104/20240430-114218-1.jpg",
+    "/media/rooms/104/20240430-114140-1.jpg",
+    "/media/rooms/104/20240430-113634-1.jpg",
+    "/media/rooms/104/20240430-114122-1.jpg",
+    "/media/rooms/104/20240430-113949-1.jpg"
+  ],
+  "order": 104
+}

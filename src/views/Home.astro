@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroVideo from '../components/HeroVideo.astro';
+import Carousel from '../components/Carousel.astro';
+import RoomCard from '../components/RoomCard.astro';
+import { home, rooms, reviews, thumb } from '../lib/data';
+import { t, href, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const h = (p: string) => href(p, lang);
+const shownReviews = reviews.items.filter((r) => r.show && r.text).slice(0, 8);
+const strip = (s: string) => s.replace(/<[^>]+>/g, '').slice(0, 160);
+---
+<Base lang={lang} title={t(home.intro.title, lang)} path="/" description={strip(t(home.intro.text, lang))} image={home.hero.poster}>
+  <HeroVideo hd={home.hero.video_hd} sd={home.hero.video_sd} poster={home.hero.poster} alt={t(home.intro.title, lang)} />
+
+  <section class="section">
+    <div class="wrap split">
+      <img class="landscape" src={thumb(home.intro.image, 960)} alt="" loading="lazy" width="960" height="720" />
+      <div>
+        <h2>{t(home.intro.title, lang)}</h2>
+        <div class="prose" set:html={t(home.intro.text, lang)} />
+        <a class="btn" href={h('/about/')}>{t(home.intro.button, lang)}</a>
+      </div>
+    </div>
+  </section>
+
+  {home.highlights.items.length > 0 && (
+    <section class="section-sm">
+      <div class="wrap">
+        <h2 class="center">{t(home.highlights.title, lang)}</h2>
+        <Carousel wide label={t(home.highlights.title, lang)}>
+          {home.highlights.items.map((it) => (
+            <a class="tile" href={it.image} data-lightbox="highlights">
+              <img src={thumb(it.image, 960)} alt={t(it.label, lang)} loading="lazy" width="960" height="720" />
+              <span class="tag">{t(it.label, lang)}</span>
+            </a>
+          ))}
+        </Carousel>
+      </div>
+    </section>
+  )}
+
+  <section class="section soft">
+    <div class="wrap">
+      <div class="split" style="align-items:end;margin-bottom:30px">
+        <div>
+          <h2>{t(home.rooms.title, lang)}</h2>
+          <p>{t(home.rooms.text, lang)}</p>
+        </div>
+        <div style="text-align:right"><a class="btn" href={h('/accommodations-2/')}>{ui('allRooms', lang)}</a></div>
+      </div>
+      <Carousel label={t(home.rooms.title, lang)}>
+        {rooms.map((r) => <RoomCard room={r} lang={lang} />)}
+      </Carousel>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="center">{t(home.facilities.title, lang)}</h2>
+      <div class="split" style="align-items:stretch;gap:30px;margin-top:40px">
+        {home.facilities.items.map((f) => (
+          <a class="tile" href={h(f.link)} style="aspect-ratio:1/1">
+            <img src={thumb(f.image, 960)} alt="" loading="lazy" width="960" height="960" />
+            <span class="label">{t(f.label, lang)}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {home.offers.show && (
+    <section class="section soft">
+      <div class="wrap">
+        <h2 class="center">{t(home.offers.title, lang)}</h2>
+        <div class="split" style="margin-top:40px">
+          <img class="landscape" src={thumb(home.offers.image, 960)} alt="" loading="lazy" width="960" height="720" />
+          <div>
+            <div class="prose" set:html={t(home.offers.text, lang)} />
+            <a class="btn" href={h('/offers/')}>{t(home.offers.button, lang)}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {home.reviews.show && shownReviews.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <h2 class="center">{t(home.reviews.title, lang)}</h2>
+        <Carousel label={t(home.reviews.title, lang)}>
+          {shownReviews.map((r) => (
+            <figure class="review" style="margin:0">
+              <div class="stars" aria-label={`${r.rating}/5`}>{'★'.repeat(r.rating)}</div>
+              <blockquote style="margin:0">{r.text}</blockquote>
+              <figcaption class="who">{r.name} <span class="src">· {r.source}</span></figcaption>
+            </figure>
+          ))}
+        </Carousel>
+        {reviews.google_url && (
+          <p class="center" style="margin-top:20px">{ui('readReviews', lang)} <a href={reviews.google_url} target="_blank" rel="noopener">Google</a>{reviews.tripadvisor_url && <> · <a href={reviews.tripadvisor_url} target="_blank" rel="noopener">TripAdvisor</a></>}</p>
+        )}
+      </div>
+    </section>
+  )}
+</Base>

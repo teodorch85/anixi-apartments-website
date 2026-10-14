@@ -1,0 +1,97 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import BookBox from '../components/BookBox.astro';
+import Carousel from '../components/Carousel.astro';
+import RoomCard from '../components/RoomCard.astro';
+import { rooms, thumb, type Room } from '../lib/data';
+import { t, ui, type Lang } from '../lib/i18n';
+import { AMENITIES } from '../lib/amenities';
+
+interface Props { lang: Lang; room: Room }
+const { lang, room } = Astro.props;
+const name = t(room.name, lang);
+const desc = t(room.description, lang);
+const note = t(room.availability, lang);
+const others = rooms.filter((r) => r.slug !== room.slug);
+const photos = room.photos.length ? room.photos : [room.cover].filter(Boolean);
+---
+<Base lang={lang} title={name} path={`/accommodation/${room.slug}/`} image={room.cover}
+      description={desc.replace(/<[^>]+>/g, '').slice(0, 160) || `${name} – ${ui('upToGuests', lang, { n: room.guests })}`}>
+  <div class="banner" style={`background-image:url('${thumb(room.cover, 960)}')`}><h1>{name}</h1></div>
+
+  <section class="section">
+    <div class="wrap">
+      <p style="font-size:17px;color:var(--ink)">
+        {ui('upToGuests', lang, { n: room.guests })}{room.renovated && <> · {ui('renovated', lang)}</>}
+      </p>
+      {note && <p class="note" style="color:var(--sand-dark);font-weight:400">{note}</p>}
+      {desc && <div class="prose" set:html={desc} />}
+
+      <h3 style="margin-top:40px">{ui('amenities', lang)}</h3>
+      <div class="amenities">
+        {room.amenities.map((a) => (
+          <div class="amenity"><Icon name={AMENITIES[a]?.icon ?? 'star'} />{t(AMENITIES[a]?.label ?? { en: a, el: a }, lang)}</div>
+        ))}
+      </div>
+
+      {photos.length > 0 && (
+        <div class="room-photos" style="margin-top:50px" data-photos>
+          <div class="photo-main">
+            <a href={photos[0]} data-lightbox="room"><img src={thumb(photos[0], 960)} alt={name} width="1200" height="750" /></a>
+            {photos.length > 1 && <>
+              <button class="arrow prev" type="button" aria-label={ui('prev', lang)}>‹</button>
+              <button class="arrow next" type="button" aria-label={ui('next', lang)}>›</button>
+            </>}
+          </div>
+          {photos.length > 1 && (
+            <div class="photo-thumbs">
+              {photos.map((p, i) => (
+                <button type="button" data-full={p} data-mid={thumb(p, 960)} aria-current={i === 0 ? 'true' : undefined} aria-label={`${i + 1}`}>
+                  <img src={thumb(p)} alt="" loading="lazy" width="140" height="105" />
+                </button>
+              ))}
+            </div>
+          )}
+          <div hidden>{photos.slice(1).map((p) => <a href={p} data-lightbox="room-all" />)}</div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <div class="wrap"><BookBox lang={lang} subject={name} /></div>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>{ui('otherRooms', lang)}</h2>
+      <Carousel>{others.map((r) => <RoomCard room={r} lang={lang} />)}</Carousel>
+    </div>
+  </section>
+</Base>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-photos]').forEach((g) => {
+    const main = g.querySelector<HTMLAnchorElement>('.photo-main a')!;
+    const img = main.querySelector('img')!;
+    const thumbs = [...g.querySelectorAll<HTMLButtonElement>('.photo-thumbs button')];
+    // lightbox should page through all photos of this room
+    const all = [main, ...g.querySelectorAll<HTMLAnchorElement>('[data-lightbox="room-all"]')];
+    let cur = 0;
+    const go = (n: number) => {
+      if (!thumbs.length) return;
+      cur = (n + thumbs.length) % thumbs.length;
+      const b = thumbs[cur];
+      img.src = b.dataset.mid!;
+      main.href = b.dataset.full!;
+      thumbs.forEach((t, i) => t.setAttribute('aria-current', String(i === cur)));
+      b.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+      // keep lightbox order starting from the shown photo
+      const hrefs = thumbs.map((t) => t.dataset.full!);
+      all.forEach((a, i) => { a.href = hrefs[(cur + i) % hrefs.length]; a.dataset.lightbox = 'room'; });
+    };
+    thumbs.forEach((b, i) => b.addEventListener('click', () => go(i)));
+    g.querySelector('.arrow.prev')?.addEventListener('click', () => go(cur - 1));
+    g.querySelector('.arrow.next')?.addEventListener('click', () => go(cur + 1));
+    if (thumbs.length) go(0);
+  });
+</script>

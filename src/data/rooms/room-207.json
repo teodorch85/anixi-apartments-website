@@ -1,0 +1,32 @@
+{
+  "slug": "room-207",
+  "number": "207",
+  "type": "apartment",
+  "name": {
+    "en": "Apartment 207",
+    "el": "Διαμέρισμα 207"
+  },
+  "guests": 4,
+  "renovated": false,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Apartment 207 is a spacious apartment for up to 4 guests with sea view, with a separate bedroom in addition to the main room. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace.</p>",
+    "el": "<p>Το Διαμέρισμα 207 είναι ένα ευρύχωρο διαμέρισμα για έως 4 άτομα με θέα στη θάλασσα, με ξεχωριστό υπνοδωμάτιο εκτός από τον κύριο χώρο. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/207/38072292-255558451718866-2699347238563348480-n.jpg",
+  "photos": [
+    "/media/rooms/207/38072292-255558451718866-2699347238563348480-n.jpg",
+    "/media/rooms/207/38072231-255558431718868-1566334827223842816-n-1.jpg",
+    "/media/rooms/207/38143474-255558618385516-3879291479100751872-n.jpg",
+    "/media/rooms/207/38118937-255558401718871-4775273475826778112-n.jpg"
+  ],
+  "order": 207
+}

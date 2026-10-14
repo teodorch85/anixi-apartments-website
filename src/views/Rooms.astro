@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import RoomCard from '../components/RoomCard.astro';
+import BookBox from '../components/BookBox.astro';
+import { rooms, roomGroups } from '../lib/data';
+import { href, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang; group?: (typeof roomGroups)[number] }
+const { lang, group } = Astro.props;
+const list = group ? rooms.filter((r) => r.guests === group.guests) : rooms;
+const path = group ? `/${group.slug}/` : '/accommodations-2/';
+const title = group ? ui(group.key, lang) : ui('rooms', lang);
+---
+<Base lang={lang} title={title} path={path}>
+  <div class="banner plain"><h1>{title}</h1></div>
+  <section class="section">
+    <div class="wrap">
+      <nav class="filters" aria-label={ui('rooms', lang)}>
+        <a href={href('/accommodations-2/', lang)} aria-current={!group ? 'page' : undefined}>{ui('allRooms', lang)}</a>
+        {roomGroups.map((g) => (
+          <a href={href(`/${g.slug}/`, lang)} aria-current={group?.slug === g.slug ? 'page' : undefined}>{ui(g.key, lang)}</a>
+        ))}
+      </nav>
+      <div class="room-grid">
+        {list.map((r) => <RoomCard room={r} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+  <div class="wrap" style="padding-bottom:90px"><BookBox lang={lang} /></div>
+</Base>

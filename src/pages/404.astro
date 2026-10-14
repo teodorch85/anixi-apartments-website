@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui } from '../lib/i18n';
+---
+<Base lang="en" title={ui('notFound', 'en')} path="/" noindex>
+  <div class="banner plain"><h1>{ui('notFound', 'en')} · {ui('notFound', 'el')}</h1></div>
+  <section class="section center">
+    <p>{ui('notFoundText', 'en')}<br />{ui('notFoundText', 'el')}</p>
+    <p><a class="btn" href="/">{ui('backHome', 'en')}</a> <a class="btn" href="/el/">{ui('backHome', 'el')}</a></p>
+  </section>
+</Base>

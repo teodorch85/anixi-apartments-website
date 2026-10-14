@@ -1,0 +1,20 @@
+---
+import Icon from './Icon.astro';
+import { thumb, type Room } from '../lib/data';
+import { t, href, ui, type Lang } from '../lib/i18n';
+
+interface Props { room: Room; lang: Lang }
+const { room, lang } = Astro.props;
+const note = t(room.availability, lang);
+---
+<a class="room-card" href={href(`/accommodation/${room.slug}/`, lang)}>
+  <div class="img">
+    <img src={thumb(room.cover, 960)} alt={t(room.name, lang)} loading="lazy" width="480" height="360" />
+    <span class="badge"><Icon name="users" /> {ui('upToGuests', lang, { n: room.guests })}</span>
+  </div>
+  <div class="body">
+    <h3>{t(room.name, lang)}</h3>
+    {note && <p class="note">{note}</p>}
+    <span class="more">{ui('viewDetails', lang)}</span>
+  </div>
+</a>

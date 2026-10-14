@@ -1,0 +1,54 @@
+---
+/** One shared full-screen photo viewer. Any <a data-lightbox="group" href="photo.jpg"> opens it. */
+import { ui, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+---
+<div class="lightbox" role="dialog" aria-modal="true" aria-label={ui('photos', lang)}>
+  <span class="lb-count"></span>
+  <button class="lb-close" aria-label={ui('close', lang)}>×</button>
+  <button class="lb-prev" aria-label={ui('prev', lang)}>‹</button>
+  <img alt="" />
+  <button class="lb-next" aria-label={ui('next', lang)}>›</button>
+</div>
+
+<script>
+  const box = document.querySelector<HTMLElement>('.lightbox')!;
+  const img = box.querySelector('img')!;
+  const count = box.querySelector('.lb-count')!;
+  let items: HTMLAnchorElement[] = [];
+  let i = 0;
+
+  const show = (n: number) => {
+    i = (n + items.length) % items.length;
+    img.src = items[i].href;
+    count.textContent = `${i + 1} / ${items.length}`;
+  };
+  const close = () => { box.classList.remove('open'); document.body.style.overflow = ''; };
+
+  document.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[data-lightbox]');
+    if (!a) return;
+    e.preventDefault();
+    items = [...document.querySelectorAll<HTMLAnchorElement>(`a[data-lightbox="${a.dataset.lightbox}"]:not([hidden])`)];
+    box.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    show(items.indexOf(a));
+  });
+  box.querySelector('.lb-close')!.addEventListener('click', close);
+  box.querySelector('.lb-prev')!.addEventListener('click', () => show(i - 1));
+  box.querySelector('.lb-next')!.addEventListener('click', () => show(i + 1));
+  box.addEventListener('click', (e) => { if (e.target === box) close(); });
+  addEventListener('keydown', (e) => {
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+  let x0 = 0;
+  box.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
+  });
+</script>

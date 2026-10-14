@@ -1,0 +1,34 @@
+{
+  "slug": "room-105",
+  "number": "105",
+  "type": "studio",
+  "name": {
+    "en": "Studio 105",
+    "el": "Στούντιο 105"
+  },
+  "guests": 3,
+  "renovated": false,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 105 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace.</p>",
+    "el": "<p>Το Στούντιο 105 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/105/38046130-255348181739893-580259887099936768-n.jpg",
+  "photos": [
+    "/media/rooms/105/38046130-255348181739893-580259887099936768-n.jpg",
+    "/media/rooms/105/38086079-255348341739877-8694903442390384640-n-1.jpg",
+    "/media/rooms/105/38122988-255348291739882-7391313265269145600-n.jpg",
+    "/media/rooms/105/20240701-132540-copy.jpg",
+    "/media/gallery/20240701-132535-copy.jpg",
+    "/media/rooms/105/20240701-132558-copy.jpg"
+  ],
+  "order": 105
+}

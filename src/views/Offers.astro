@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import BookBox from '../components/BookBox.astro';
+import { offers, thumb } from '../lib/data';
+import { t, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const title = t(offers.title, lang);
+const active = (offers.items ?? []).filter((o) => o.active && t(o.text, lang));
+---
+<Base lang={lang} title={title} path="/offers/" image={offers.image || undefined}>
+  {offers.image
+    ? <div class="banner" style={`background-image:url('${thumb(offers.image, 960)}')`}><h1>{title}</h1></div>
+    : <div class="banner plain"><h1>{title}</h1></div>}
+  <section class="section">
+    <div class="wrap">
+      <div class="prose" set:html={t(offers.intro, lang)} />
+      {active.length > 0 && (
+        <ul class="offer-list">
+          {active.map((o) => <li>{t(o.text, lang)}</li>)}
+        </ul>
+      )}
+      <div class="prose" set:html={t(offers.note, lang)} />
+    </div>
+  </section>
+  <div class="wrap" style="padding-bottom:90px"><BookBox lang={lang} /></div>
+</Base>
+
+<style>
+  .offer-list { list-style: none; padding: 0; margin: 10px 0 30px; display: grid; gap: 12px; }
+  .offer-list li { background: #fff; box-shadow: var(--shadow); padding: 18px 22px; border-left: 4px solid var(--sand); color: var(--ink); }
+</style>

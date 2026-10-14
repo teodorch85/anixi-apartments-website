@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "video_hd": "/media/home/hero-2025-60-1080.mp4",
+    "video_sd": "/media/home/hero-2025-60-720.mp4",
+    "poster": "/media/home/hero-2025-60-poster.jpg"
+  },
+  "intro": {
+    "title": {
+      "en": "Anixi Apartments. The ideal place to stay in Sisi, Crete",
+      "el": "Anixi Apartments. Το ιδανικό μέρος για διαμονή στη Σίσι της Κρήτης"
+    },
+    "text": {
+      "en": "<p>Anixi Apartments are located approximately 5 minutes walk from the picturesque little fishing village of Sisi and they are within 1500m of the main sandy beach, and 300m from a small manmade beach.</p>",
+      "el": "<p>Τα Anixi Apartments βρίσκονται περίπου 5 λεπτά με τα πόδια από το γραφικό ψαροχώρι της Σίσι, σε απόσταση 1.500 μέτρων από την κεντρική αμμουδιά και 300 μέτρων από μια μικρή τεχνητή παραλία.</p>"
+    },
+    "image": "/media/home/dji-0224.jpg",
+    "button": {
+      "en": "More about us",
+      "el": "Περισσότερα για εμάς"
+    }
+  },
+  "highlights": {
+    "title": {
+      "en": "Anixi Apartments Highlights",
+      "el": "Στιγμές από τα Anixi Apartments"
+    },
+    "items": [
+      {
+        "label": {
+          "en": "Swimming Pool",
+          "el": "Πισίνα"
+        },
+        "image": "/media/home/dji-0302.jpg"
+      },
+      {
+        "label": {
+          "en": "Restaurant and Cafe",
+          "el": "Εστιατόριο & Καφέ"
+        },
+        "image": "/media/home/20230820-210958.jpg"
+      },
+      {
+        "label": {
+          "en": "Food & Snacks",
+          "el": "Φαγητό & Σνακ"
+        },
+        "image": "/media/home/20240524-143221.jpg"
+      },
+      {
+        "label": {
+          "en": "Drinks",
+          "el": "Ποτά"
+        },
+        "image": "/media/home/20230614-201645.jpg"
+      },
+      {
+        "label": {
+          "en": "Sea View",
+          "el": "Θέα θάλασσα"
+        },
+        "image": "/media/home/20240518-103538.jpg"
+      }
+    ]
+  },
+  "rooms": {
+    "title": {
+      "en": "Our Rooms",
+      "el": "Τα δωμάτιά μας"
+    },
+    "text": {
+      "en": "Book your room directly through the hotel owners and not via a booking engine.",
+      "el": "Κλείστε το δωμάτιό σας απευθείας με τους ιδιοκτήτες και όχι μέσω πλατφόρμας κρατήσεων."
+    }
+  },
+  "facilities": {
+    "title": {
+      "en": "Facilities & Amenities",
+      "el": "Παροχές & Ανέσεις"
+    },
+    "items": [
+      {
+        "label": {
+          "en": "Swimming Pool",
+          "el": "Πισίνα"
+        },
+        "image": "/media/home/20240502-195350.jpg",
+        "link": "/swimming-pool/"
+      },
+      {
+        "label": {
+          "en": "Restaurant and Pool Bar",
+          "el": "Εστιατόριο & Pool Bar"
+        },
+        "image": "/media/home/20240529-202440.jpg",
+        "link": "/restaurant-and-pool-bar/"
+      }
+    ]
+  },
+  "offers": {
+    "show": true,
+    "title": {
+      "en": "Limited Time Offers for 2026",
+      "el": "Προσφορές περιορισμένου χρόνου για το 2026"
+    },
+    "text": {
+      "en": "<p>View our limited time offers and early booking, as well as our new \"Bring your baby with you\" period.</p>",
+      "el": "<p>Δείτε τις προσφορές περιορισμένου χρόνου και τις τιμές early booking, καθώς και τη νέα μας περίοδο «Φέρτε και το μωρό σας».</p>"
+    },
+    "image": "/media/home/20240624-201953-copy.jpg",
+    "button": {
+      "en": "See Offers",
+      "el": "Δείτε τις προσφορές"
+    }
+  },
+  "reviews": {
+    "show": true,
+    "title": {
+      "en": "What our guests say",
+      "el": "Τι λένε οι επισκέπτες μας"
+    }
+  }
+}

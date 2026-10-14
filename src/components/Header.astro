@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+import { settings } from '../lib/data';
+import { href, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang; path: string }
+const { lang, path } = Astro.props;
+const h = (p: string) => href(p, lang);
+const cur = (p: string) => (path === p ? 'page' : undefined);
+const subject = encodeURIComponent(ui('enquirySubject', lang));
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href={h('/')} aria-label={settings.name}>
+      <img src={settings.logo} alt={settings.name} width="160" height="52" />
+    </a>
+    <button class="menu-toggle" aria-label={ui('menu', lang)} aria-expanded="false" aria-controls="nav"><Icon name="menu" /></button>
+    <nav class="nav" id="nav" aria-label={ui('menu', lang)}>
+      <ul>
+        <li><a href={h('/')} aria-current={cur('/')}>{ui('home', lang)}</a></li>
+        <li class="has-sub">
+          <a class="nav-parent" href={h('/accommodations-2/')} aria-current={cur('/accommodations-2/')}>{ui('rooms', lang)}</a>
+          <ul class="sub">
+            <li><a href={h('/up-to-two-persons/')}>{ui('upTo2', lang)}</a></li>
+            <li><a href={h('/up-to-three-persons/')}>{ui('upTo3', lang)}</a></li>
+            <li><a href={h('/up-to-four-persons/')}>{ui('upTo4', lang)}</a></li>
+          </ul>
+        </li>
+        <li><a href={h('/about/')} aria-current={cur('/about/')}>{ui('about', lang)}</a></li>
+        <li><a href={h('/gallery/')} aria-current={cur('/gallery/')}>{ui('gallery', lang)}</a></li>
+        <li class="has-sub">
+          <button class="nav-parent" type="button">{ui('services', lang)}</button>
+          <ul class="sub">
+            <li><a href={h('/swimming-pool/')}>{ui('pool', lang)}</a></li>
+            <li><a href={h('/restaurant-and-pool-bar/')}>{ui('restaurant', lang)}</a></li>
+          </ul>
+        </li>
+        <li><a href={h('/prices/')} aria-current={cur('/prices/')}>{ui('prices', lang)}</a></li>
+        <li><a href={h('/offers/')} aria-current={cur('/offers/')}>{ui('offers', lang)}</a></li>
+        <li><a href={h('/contact/')} aria-current={cur('/contact/')}>{ui('contact', lang)}</a></li>
+      </ul>
+      <a class="book-link" href={`mailto:${settings.booking_email}?subject=${subject}`}>{ui('book', lang)}</a>
+      <div class="lang-switch">
+        <a href={path} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+        <a href={'/el' + path} hreflang="el" lang="el" aria-current={lang === 'el' ? 'true' : undefined}>ΕΛ</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('nav');
+  btn?.addEventListener('click', () => {
+    const open = nav!.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+</script>

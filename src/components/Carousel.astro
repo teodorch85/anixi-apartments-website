@@ -1,0 +1,40 @@
+---
+/** Horizontal scroll-snap carousel with arrows and a "1 / n" counter. */
+interface Props { wide?: boolean; label?: string }
+const { wide, label } = Astro.props;
+---
+<div class:list={['carousel', { wide }]} data-carousel aria-label={label}>
+  <div class="carousel-track"><slot /></div>
+  <div class="carousel-nav">
+    <span class="count"></span>
+    <span>
+      <button type="button" data-dir="-1" aria-label="Previous">←</button>
+      <button type="button" data-dir="1" aria-label="Next">→</button>
+    </span>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((c) => {
+    const track = c.querySelector<HTMLElement>('.carousel-track')!;
+    const count = c.querySelector('.count')!;
+    const [prev, next] = c.querySelectorAll<HTMLButtonElement>('.carousel-nav button');
+    const update = () => {
+      const items = track.children.length;
+      const w = (track.firstElementChild as HTMLElement)?.offsetWidth || 1;
+      const idx = Math.round(track.scrollLeft / (w + 30)) + 1;
+      count.textContent = `${Math.min(idx, items)} / ${items}`;
+      prev.disabled = track.scrollLeft < 5;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+    };
+    c.querySelectorAll<HTMLButtonElement>('[data-dir]').forEach((b) =>
+      b.addEventListener('click', () => {
+        const w = (track.firstElementChild as HTMLElement)?.offsetWidth || 300;
+        track.scrollBy({ left: Number(b.dataset.dir) * (w + 30), behavior: 'smooth' });
+      }),
+    );
+    track.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+  });
+</script>

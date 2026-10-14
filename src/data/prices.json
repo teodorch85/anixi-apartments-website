@@ -1,0 +1,122 @@
+{
+  "title": {
+    "en": "Summer 2027 rates",
+    "el": "Τιμές καλοκαιρι 2027"
+  },
+  "season": {
+    "en": "Summer 2027 · Red rates (per room per night)",
+    "el": "Καλοκαίρι 2027 · Κόκκινες τιμές (ανά δωμάτιο ανά βράδυ)"
+  },
+  "seasons": {
+    "low": {
+      "name": {
+        "en": "Low season",
+        "el": "Χαμηλή περίοδος"
+      },
+      "dates": {
+        "en": "01/05 – 15/05 & 05/10 – 30/10",
+        "el": "01/05 – 15/05 & 05/10 – 30/10"
+      }
+    },
+    "mid": {
+      "name": {
+        "en": "Mid season",
+        "el": "Μεσαία περίοδος"
+      },
+      "dates": {
+        "en": "16/05 – 31/05 & 25/09 – 04/10",
+        "el": "16/05 – 31/05 & 25/09 – 04/10"
+      }
+    },
+    "high": {
+      "name": {
+        "en": "High season",
+        "el": "Υψηλή περίοδος"
+      },
+      "dates": {
+        "en": "01/06 – 24/09",
+        "el": "01/06 – 24/09"
+      }
+    }
+  },
+  "categories": [
+    {
+      "rooms": {
+        "el": "Στούντιο 11, 12",
+        "en": "Studios 11, 12"
+      },
+      "persons": {
+        "el": "2–3 άτομα",
+        "en": "2–3 persons"
+      },
+      "low": "45€",
+      "mid": "55€",
+      "high": "60€"
+    },
+    {
+      "rooms": {
+        "el": "Στούντιο 102, 103, 105",
+        "en": "Studios 102, 103, 105"
+      },
+      "persons": {
+        "el": "2–3 άτομα",
+        "en": "2–3 persons"
+      },
+      "low": "60€",
+      "mid": "65€",
+      "high": "70€"
+    },
+    {
+      "rooms": {
+        "el": "Διαμέρισμα 207 (2–4) · Στούντιο 101* (2) · Στούντιο 14*, 104* (2–3)",
+        "en": "Apartment 207 (2–4 persons) · Studio 101* (2 persons) · Studios 14*, 104* (2–3 persons)"
+      },
+      "low": "65€",
+      "mid": "70€",
+      "high": "75€"
+    },
+    {
+      "rooms": {
+        "el": "Στούντιο 205*, 206* (2–3) · Στούντιο 107*, 106* (2-3 persons), 108* (2 persons)",
+        "en": "Studios 106*, 107*, 205*, 206* (2–3 persons) Studio 108* (2 persons)"
+      },
+      "low": "70€",
+      "mid": "80€",
+      "high": "95€"
+    },
+    {
+      "rooms": {
+        "el": "Διαμερίσματα 201*, 203*",
+        "en": "Apartments 201*, 203*"
+      },
+      "persons": {
+        "el": "2–4 άτομα",
+        "en": "2–4 persons"
+      },
+      "low": "80€",
+      "mid": "90€",
+      "high": "110€"
+    },
+    {
+      "rooms": {
+        "el": "Διαμέρισμα 204*",
+        "en": "Apartment 204*"
+      },
+      "persons": {
+        "el": "2–4 άτομα",
+        "en": "2–4 persons"
+      },
+      "low": "90€",
+      "mid": "100€",
+      "high": "125€"
+    }
+  ],
+  "footnote": {
+    "en": "* Renovated rooms · All rooms are non-smoking",
+    "el": "* Ανακαινισμένα δωμάτια · Σε όλα τα δωμάτια απαγορεύεται το κάπνισμα"
+  },
+  "notes": {
+    "en": "<p>The above rates include all taxes except the overnight accommodation tax (2,00€ per night per room) which is payable upon check out CASH ONLY.</p><p>RED RATES: Non refundable rates, no changes allowed, if it is possible to do minor changes (adjust dates by a couple of days or change room type) additional charges of 50€ per change will be applied. To secure a booking full payment is required when the booking is made.</p><p>BLUE RATES (20% higher than the RED RATES): Fully flexible up to 45 days before arrival, fully refundable up to 45 days before arrival (subject to a 50€ charge due to bank or card commissions and administration fees) special offers do not apply. To secure a booking a 50% deposit is required, payment of the balance can be made during the holiday.</p><p>GREEN RATES (30% higher than the RED RATES): Fully flexible up to 15 days before arrival, fully refundable up to 15 days before arrival (subject to a 50€ charge due to bank or card commissions and administration fees) special offers do not apply. To secure a booking a 30% deposit is required, payment of the balance can be made during the holiday.</p><p>Prices are per room per night for self catering option for bookings exceeding seven nights, for bookings up to six nights s/c prices are 20% higher than the above list. For b&amp;b there is an extra cost of 9.00€ per person per day. Breakfast included, is either continental or English, with drinks (juice and coffee or tea), for superior option add 2.50€ per person. Breakfast is normally served from 09:30 till 11:30. Check in time is 15:00pm and checkout time 11:00am. NOT INCLUDED in the above prices are the use of Air conditioning, and safety deposit box, which are optional extras and can be hired if needed.</p><p>We are sorry but children under 12 are not allowed in the hotel or restaurant. <u>Please note that for 2026 we will take bookings with children of all ages for the period 25/07 till 25/08 +/- a couple of days in order to match flights.</u></p><p>Transfer from and to the airport is not included in our prices, but we cooperate with a local taxi driver with a very competitive rate . For extra supplement per person please contact us.</p><p>If you wish to book with us, email us at <a href=\"mailto:anixi_apartments@hotmail.com\">anixi_apartments@hotmail.com</a> or <a href=\"mailto:anixi.apartments@gmail.com\">anixi.apartments@gmail.com</a> or send as a message through facebook at https://www.facebook.com/anixi.apartments telling us the dates that you are interested in together with the number of persons and type of room. You can always call us at 00302841071477 or 00306947840190-1 to obtain more information or inform us of any special requests. Bookings are confirmed only after payment (deposit or full payment). We do not operate an online booking facility as we prefer the personal contact with our guests, giving them all the options available, for an unforgetable holiday.</p><p>Cancellation Policy: Bookings that are cancelled, which were made with our RED rates are non refundable, minor date changes are possible(by one or two days maximum, due to flight changes) if notice is given at least 45 days before arrival, depending also on availability, with a charge of 50,00€ per change, and any difference in price due to room type or season of booking.</p><p>Bookings that are cancelled, which were made with our BLUE rates and a 50% deposit are fully refundable (up to 45 days before arrival, subject to a 50€ charge), date changes are possible (once only) if notice is given at least 45 days before arrival, depending also on availability, with no extra charge apart from any difference in price due to room type or season of booking.</p><p>Bookings that are cancelled, which were made with our GREEN rates and a 30% deposit are fully refundable (up to 15 days before arrival, subject to a 50€ charge), date changes are possible (once only) if notice is given at least 15 days before arrival, depending also on availability, with no extra charge apart from any difference in price due to room type or season of booking.</p><p>Please note that if you have booked and cancelled in the past, any new bookings will only be accepted with full payment at the red rate, any special offers do not apply. If you need further clarification please contact us.</p><p><strong>Reception is open from 08:30 till 01:00. Guests arriving at different times should contact us prior to arrival either by email or by phone, so that we can arrange their check in</strong></p>",
+    "el": "<p>Οι παραπάνω τιμές περιλαμβάνουν όλους τους φόρους εκτός από το τέλος διαμονής (2,00€ ανά βράδυ ανά δωμάτιο), το οποίο καταβάλλεται κατά την αναχώρηση ΜΟΝΟ ΣΕ ΜΕΤΡΗΤΑ.</p><p>ΚΟΚΚΙΝΕΣ ΤΙΜΕΣ: Μη επιστρεπτέες, χωρίς δυνατότητα αλλαγών. Εφόσον είναι εφικτές μικρές αλλαγές (μετακίνηση ημερομηνιών κατά μία-δύο ημέρες ή αλλαγή τύπου δωματίου), χρεώνεται επιπλέον 50€ ανά αλλαγή. Για την εξασφάλιση της κράτησης απαιτείται εξόφληση κατά την κράτηση.</p><p>ΜΠΛΕ ΤΙΜΕΣ (20% υψηλότερες από τις ΚΟΚΚΙΝΕΣ): Πλήρως ευέλικτες και πλήρως επιστρεπτέες έως 45 ημέρες πριν την άφιξη (με χρέωση 50€ για τραπεζικές προμήθειες και διαχειριστικά έξοδα). Οι ειδικές προσφορές δεν ισχύουν. Για την εξασφάλιση της κράτησης απαιτείται προκαταβολή 50%· το υπόλοιπο εξοφλείται κατά τη διαμονή.</p><p>ΠΡΑΣΙΝΕΣ ΤΙΜΕΣ (30% υψηλότερες από τις ΚΟΚΚΙΝΕΣ): Πλήρως ευέλικτες και πλήρως επιστρεπτέες έως 15 ημέρες πριν την άφιξη (με χρέωση 50€ για τραπεζικές προμήθειες και διαχειριστικά έξοδα). Οι ειδικές προσφορές δεν ισχύουν. Για την εξασφάλιση της κράτησης απαιτείται προκαταβολή 30%· το υπόλοιπο εξοφλείται κατά τη διαμονή.</p><p>Οι τιμές είναι ανά δωμάτιο ανά βράδυ, χωρίς πρωινό, για κρατήσεις άνω των επτά νυχτών· για κρατήσεις έως έξι νύχτες οι τιμές είναι 20% υψηλότερες. Για διαμονή με πρωινό υπάρχει επιπλέον χρέωση 9,00€ ανά άτομο ανά ημέρα. Το πρωινό είναι continental ή αγγλικό, με ποτά (χυμό και καφέ ή τσάι)· για το superior πρωινό προσθέστε 2,50€ ανά άτομο. Το πρωινό σερβίρεται συνήθως από τις 09:30 έως τις 11:30. Check-in από τις 15:00 και check-out έως τις 11:00. ΔΕΝ περιλαμβάνονται στις τιμές ο κλιματισμός και η θυρίδα ασφαλείας, που διατίθενται προαιρετικά με επιπλέον χρέωση.</p><p>Λυπούμαστε, αλλά παιδιά κάτω των 12 ετών δεν επιτρέπονται στο ξενοδοχείο ή στο εστιατόριο. <u>Σημειώστε ότι για το 2026 δεχόμαστε κρατήσεις με παιδιά όλων των ηλικιών για την περίοδο 25/07 έως 25/08, +/- λίγες ημέρες ώστε να ταιριάζουν με τις πτήσεις.</u></p><p>Η μεταφορά από και προς το αεροδρόμιο δεν περιλαμβάνεται στις τιμές, αλλά συνεργαζόμαστε με τοπικό ταξί σε πολύ ανταγωνιστική τιμή. Για την επιπλέον χρέωση ανά άτομο επικοινωνήστε μαζί μας.</p><p>Για κράτηση στείλτε μας e-mail στο <a href=\"mailto:anixi_apartments@hotmail.com\">anixi_apartments@hotmail.com</a> ή στο <a href=\"mailto:anixi.apartments@gmail.com\">anixi.apartments@gmail.com</a> ή μήνυμα στο Facebook (https://www.facebook.com/anixi.apartments), αναφέροντας τις ημερομηνίες που σας ενδιαφέρουν, τον αριθμό των ατόμων και τον τύπο δωματίου. Μπορείτε επίσης να μας καλέσετε στο 0030 28410 71477 ή στο 0030 6947840190-1 για περισσότερες πληροφορίες ή ειδικά αιτήματα. Οι κρατήσεις επιβεβαιώνονται μόνο μετά την πληρωμή (προκαταβολή ή εξόφληση). Δεν διαθέτουμε online κρατήσεις, καθώς προτιμούμε την προσωπική επαφή με τους επισκέπτες μας, ώστε να τους προτείνουμε όλες τις διαθέσιμες επιλογές για αξέχαστες διακοπές.</p><p>Πολιτική ακύρωσης: Οι κρατήσεις με ΚΟΚΚΙΝΕΣ τιμές δεν επιστρέφονται σε περίπτωση ακύρωσης. Μικρές αλλαγές ημερομηνιών (μία ή δύο ημέρες το πολύ, λόγω αλλαγής πτήσεων) είναι δυνατές με ειδοποίηση τουλάχιστον 45 ημέρες πριν την άφιξη, ανάλογα με τη διαθεσιμότητα, με χρέωση 50,00€ ανά αλλαγή και τυχόν διαφορά τιμής λόγω τύπου δωματίου ή περιόδου.</p><p>Οι κρατήσεις με ΜΠΛΕ τιμές και προκαταβολή 50% επιστρέφονται πλήρως σε περίπτωση ακύρωσης έως 45 ημέρες πριν την άφιξη (με χρέωση 50€). Αλλαγή ημερομηνιών (μία φορά) είναι δυνατή με ειδοποίηση τουλάχιστον 45 ημέρες πριν την άφιξη, ανάλογα με τη διαθεσιμότητα, χωρίς επιπλέον χρέωση πέρα από τυχόν διαφορά τιμής λόγω τύπου δωματίου ή περιόδου.</p><p>Οι κρατήσεις με ΠΡΑΣΙΝΕΣ τιμές και προκαταβολή 30% επιστρέφονται πλήρως σε περίπτωση ακύρωσης έως 15 ημέρες πριν την άφιξη (με χρέωση 50€). Αλλαγή ημερομηνιών (μία φορά) είναι δυνατή με ειδοποίηση τουλάχιστον 15 ημέρες πριν την άφιξη, ανάλογα με τη διαθεσιμότητα, χωρίς επιπλέον χρέωση πέρα από τυχόν διαφορά τιμής λόγω τύπου δωματίου ή περιόδου.</p><p>Σημειώστε ότι αν έχετε κάνει κράτηση και την έχετε ακυρώσει στο παρελθόν, νέες κρατήσεις γίνονται δεκτές μόνο με πλήρη εξόφληση στην κόκκινη τιμή και χωρίς ειδικές προσφορές. Για οποιαδήποτε διευκρίνιση επικοινωνήστε μαζί μας.</p><p><strong>Η υποδοχή λειτουργεί από τις 08:30 έως τη 01:00. Οι επισκέπτες που φτάνουν άλλη ώρα παρακαλούνται να επικοινωνήσουν μαζί μας πριν την άφιξη, με e-mail ή τηλεφωνικά, ώστε να κανονίσουμε το check-in.</strong></p>"
+  }
+}

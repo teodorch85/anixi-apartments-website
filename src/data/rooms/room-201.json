@@ -1,0 +1,34 @@
+{
+  "slug": "room-201",
+  "number": "201",
+  "type": "apartment",
+  "name": {
+    "en": "Apartment 201",
+    "el": "Διαμέρισμα 201"
+  },
+  "guests": 4,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Apartment 201 is a spacious apartment for up to 4 guests with sea view, with a separate bedroom in addition to the main room. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Διαμέρισμα 201 είναι ένα ευρύχωρο διαμέρισμα για έως 4 άτομα με θέα στη θάλασσα, με ξεχωριστό υπνοδωμάτιο εκτός από τον κύριο χώρο. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/201/20200210-120611-1.jpg",
+  "photos": [
+    "/media/rooms/201/20200210-120611-1.jpg",
+    "/media/rooms/201/20200213-164436-1.jpg",
+    "/media/rooms/201/20200213-164355.jpg",
+    "/media/rooms/201/20200213-164338-1.jpg",
+    "/media/rooms/201/20200213-164822.jpg",
+    "/media/rooms/201/20200201-161827.jpg"
+  ],
+  "order": 201
+}

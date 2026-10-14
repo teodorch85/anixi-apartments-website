@@ -1,0 +1,33 @@
+{
+  "slug": "room-106",
+  "number": "106",
+  "type": "studio",
+  "name": {
+    "en": "Studio 106",
+    "el": "Στούντιο 106"
+  },
+  "guests": 3,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Studio 106 is a bright studio for up to 3 guests with sea view. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Στούντιο 106 είναι ένα φωτεινό στούντιο για έως 3 άτομα με θέα στη θάλασσα. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "availability": {
+    "en": "",
+    "el": ""
+  },
+  "cover": "/media/rooms/106/20260430-100849.jpg",
+  "photos": [
+    "/media/rooms/106/20260430-100849.jpg",
+    "/media/rooms/106/20260422-145051.jpg",
+    "/media/rooms/106/20260430-102256.jpg",
+    "/media/rooms/106/20260422-145203.jpg",
+    "/media/rooms/106/20260422-145130.jpg"
+  ],
+  "order": 106
+}

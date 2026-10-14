@@ -1,0 +1,48 @@
+{
+  "address": {
+    "en": "Sisi, Crete, Greece 724 00",
+    "el": "Σίσι, Κρήτη 724 00"
+  },
+  "phones": [
+    {
+      "label": {
+        "en": "Reception",
+        "el": "Υποδοχή"
+      },
+      "number": "+30 28410 71477"
+    },
+    {
+      "label": {
+        "en": "Mobile",
+        "el": "Κινητό"
+      },
+      "number": "+30 694 784 0190"
+    },
+    {
+      "label": {
+        "en": "Mobile",
+        "el": "Κινητό"
+      },
+      "number": "+30 694 784 0191"
+    }
+  ],
+  "emails": [
+    "anixi_apartments@hotmail.com",
+    "anixi.apartments@gmail.com"
+  ],
+  "booking_email": "anixi_apartments@hotmail.com",
+  "whatsapp": "",
+  "facebook": "https://www.facebook.com/anixi.apartments",
+  "advanced": {
+    "name": "Anixi Apartments",
+    "tagline": {
+      "en": "Studios & Apartments",
+      "el": "Στούντιο & Διαμερίσματα"
+    },
+    "logo": "/media/site/logo-small.jpg",
+    "map_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.920148201008!2d25.512389615605045!3d35.3079655579589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a7af482272779%3A0xfd6881059843ee4!2sAnixi%20Apartments!5e0!3m2!1sel!2sgr!4v1679555293308!5m2!1sel!2sgr",
+    "license": "ΜΗΤΕ 1040Κ032Α0085400",
+    "eu_banner": "/media/site/e-bannerseuerdf600x80.jpg",
+    "eu_pdf": "/media/site/tourismcvEN.pdf"
+  }
+}

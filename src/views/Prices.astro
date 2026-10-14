@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import BookBox from '../components/BookBox.astro';
+import { prices } from '../lib/data';
+import { t, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const title = t(prices.title, lang);
+const seasons = (['low', 'mid', 'high'] as const).map((k) => ({ key: k, ...prices.seasons[k] }));
+const cats = prices.categories.filter((c) => t(c.rooms, lang));
+---
+<Base lang={lang} title={title} path="/prices/">
+  <div class="banner plain"><h1>{title}</h1></div>
+  <section class="section">
+    <div class="wrap">
+      <p style="color:var(--ink);font-size:17px">{t(prices.season, lang)}</p>
+      <div class="table-wrap">
+        <table class="prices">
+          <thead>
+            <tr>
+              <th>{ui('period', lang)}</th>
+              {cats.map((c) => <th>{t(c.rooms, lang)}{t(c.persons, lang) && <small>{t(c.persons, lang)}</small>}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {seasons.filter((s) => t(s.dates, lang)).map((s) => (
+              <tr>
+                <td><small style="display:block;color:var(--text);font-size:12px">{t(s.name, lang)}</small>{t(s.dates, lang)}</td>
+                {cats.map((c) => <td>{c[s.key]}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;font-size:13px">{t(prices.footnote, lang)}</p>
+      <div class="prose" style="margin-top:40px" set:html={t(prices.notes, lang)} />
+    </div>
+  </section>
+  <div class="wrap" style="padding-bottom:90px"><BookBox lang={lang} /></div>
+</Base>

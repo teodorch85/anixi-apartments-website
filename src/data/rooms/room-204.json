@@ -1,0 +1,31 @@
+{
+  "slug": "room-204",
+  "number": "204",
+  "type": "apartment",
+  "name": {
+    "en": "Apartment 204",
+    "el": "Διαμέρισμα 204"
+  },
+  "guests": 4,
+  "renovated": true,
+  "amenities": [
+    "ac",
+    "wifi",
+    "sea"
+  ],
+  "description": {
+    "en": "<p>Apartment 204 is a spacious apartment for up to 4 guests with sea view, with a separate bedroom in addition to the main room. It has a kitchenette (2-ring cooker and fridge), a bathroom with shower and WC, air-conditioning and a safety deposit box (both optional extras) and a balcony or terrace. Recently renovated.</p>",
+    "el": "<p>Το Διαμέρισμα 204 είναι ένα ευρύχωρο διαμέρισμα για έως 4 άτομα με θέα στη θάλασσα, με ξεχωριστό υπνοδωμάτιο εκτός από τον κύριο χώρο. Διαθέτει κουζινάκι (εστίες και ψυγείο), μπάνιο με ντους και WC, κλιματισμό και θυρίδα ασφαλείας (προαιρετικά, με επιπλέον χρέωση) και μπαλκόνι ή βεράντα. Πρόσφατα ανακαινισμένο.</p>"
+  },
+  "cover": "/media/rooms/204/20260430-101820.jpg",
+  "photos": [
+    "/media/rooms/204/20260430-101820.jpg",
+    "/media/rooms/204/20260430-101702.jpg",
+    "/media/rooms/204/20260430-101616.jpg",
+    "/media/rooms/204/20260430-101641.jpg",
+    "/media/rooms/204/20260430-101835.jpg",
+    "/media/rooms/204/20240702-130300-copy.jpg"
+  ],
+  "order": 204,
+  "hidden": false
+}
