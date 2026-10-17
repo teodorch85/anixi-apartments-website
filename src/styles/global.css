@@ -243,3 +243,17 @@ form.enquiry .hint { font-size: 12px; margin: 0; }
 .back-top.show { opacity: 1; pointer-events: auto; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Availability request form */
+form.request label { display: grid; gap: 4px; }
+form.request label > span { font-size: 13px; }
+form.request select {
+  width: 100%; border: 1px solid var(--line); background: var(--bg-soft); padding: 13px 14px; font: inherit; color: var(--ink);
+}
+form.request textarea { min-height: 110px; }
+form.request .nights { margin: -6px 0 0; font-size: 13px; min-height: 1em; }
+form.request .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+form.request .status { margin: 0; padding: 14px; border-left: 4px solid var(--sand); background: var(--bg-soft); }
+form.request .status.err { border-left-color: #b3261e; }
+form.request button:disabled { opacity: .6; cursor: wait; }
+#request { scroll-margin-top: 110px; }

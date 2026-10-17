@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import RequestForm from '../components/RequestForm.astro';
 import { settings, telHref } from '../lib/data';
 import { t, ui, type Lang } from '../lib/i18n';
 
@@ -23,40 +24,12 @@ const title = ui('contact', lang);
         {settings.whatsapp && <li><Icon name="whatsapp" /><div><h4>WhatsApp</h4><a href={`https://wa.me/${settings.whatsapp.replace(/[^\d]/g, '')}`} target="_blank" rel="noopener">{settings.whatsapp}</a></div></li>}
         {settings.facebook && <li><Icon name="facebook" /><div><h4>Facebook</h4><a href={settings.facebook} target="_blank" rel="noopener">anixi.apartments</a></div></li>}
       </ul>
-      <div>
-        <h2>{ui('writeToUs', lang)}</h2>
-        <p>{ui('writeToUsText', lang)}</p>
-        <form class="enquiry" data-to={settings.booking_email} data-subject={ui('enquirySubject', lang)}>
-          <div class="row">
-            <input name="name" required placeholder={ui('name', lang)} aria-label={ui('name', lang)} />
-            <input name="email" type="email" required placeholder={ui('email', lang)} aria-label={ui('email', lang)} />
-          </div>
-          <div class="row">
-            <label><span style="font-size:13px">{ui('arrival', lang)}</span><input name="arrival" type="date" /></label>
-            <label><span style="font-size:13px">{ui('departure', lang)}</span><input name="departure" type="date" /></label>
-          </div>
-          <input name="guests" type="number" min="1" max="6" placeholder={ui('guests', lang)} aria-label={ui('guests', lang)} />
-          <textarea name="message" placeholder={ui('message', lang)} aria-label={ui('message', lang)}></textarea>
-          <div><button class="btn btn-sand" type="submit">{ui('send', lang)}</button></div>
-          <p class="hint">{ui('formNote', lang)}</p>
-        </form>
+      <div id="request">
+        <h2>{ui('checkAvailability', lang)}</h2>
+        <p>{ui('reqText', lang)}</p>
+        <RequestForm lang={lang} />
       </div>
     </div>
   </section>
   {settings.map_embed && <div class="map"><iframe src={settings.map_embed} loading="lazy" title="Map" referrerpolicy="no-referrer-when-downgrade"></iframe></div>}
 </Base>
-
-<script>
-  document.querySelectorAll<HTMLFormElement>('form.enquiry').forEach((f) => {
-    f.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const d = new FormData(f);
-      const lines = [
-        `Name: ${d.get('name')}`, `Email: ${d.get('email')}`,
-        d.get('arrival') ? `Arrival: ${d.get('arrival')}` : '', d.get('departure') ? `Departure: ${d.get('departure')}` : '',
-        d.get('guests') ? `Guests: ${d.get('guests')}` : '', '', String(d.get('message') || ''),
-      ].filter((l, i) => l || i === 5);
-      location.href = `mailto:${f.dataset.to}?subject=${encodeURIComponent(`${f.dataset.subject} – ${d.get('name')}`)}&body=${encodeURIComponent(lines.join('\n'))}`;
-    });
-  });
-</script>

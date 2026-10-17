@@ -59,7 +59,7 @@ const photos = room.photos.length ? room.photos : [room.cover].filter(Boolean);
     </div>
   </section>
 
-  <div class="wrap"><BookBox lang={lang} subject={name} /></div>
+  <div class="wrap"><BookBox lang={lang} subject={name} room={room.slug} /></div>
 
   <section class="section">
     <div class="wrap">

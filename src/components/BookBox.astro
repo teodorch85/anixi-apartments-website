@@ -1,10 +1,11 @@
 ---
 import Icon from './Icon.astro';
 import { settings, telHref } from '../lib/data';
-import { ui, type Lang } from '../lib/i18n';
+import { ui, href, type Lang } from '../lib/i18n';
 
-interface Props { lang: Lang; subject?: string }
-const { lang, subject } = Astro.props;
+interface Props { lang: Lang; subject?: string; room?: string }
+const { lang, subject, room } = Astro.props;
+const request = href('/contact/', lang) + (room ? `?room=${room}` : '') + '#request';
 const mail = `mailto:${settings.booking_email}?subject=${encodeURIComponent(subject || ui('enquirySubject', lang))}`;
 const phone = settings.phones[0]?.number;
 const wa = settings.whatsapp ? `https://wa.me/${settings.whatsapp.replace(/[^\d]/g, '')}` : '';
@@ -13,6 +14,7 @@ const wa = settings.whatsapp ? `https://wa.me/${settings.whatsapp.replace(/[^\d]
   <h2>{ui('bookDirect', lang)}</h2>
   <p>{ui('bookDirectText', lang)}</p>
   <div class="actions">
+    <a class="btn btn-sand" href={request}>{ui('checkAvailability', lang)}</a>
     {phone && <a class="btn" href={telHref(phone)}><Icon name="phone" class="sr-only" />{ui('callUs', lang)}: {phone}</a>}
     <a class="btn" href={mail}>{ui('emailUs', lang)}</a>
     {wa && <a class="btn" href={wa} target="_blank" rel="noopener">WhatsApp</a>}

@@ -350,6 +350,7 @@ content:
           - { name: logo, label: Λογότυπο, type: image, options: { path: public/media/site } }
           - { name: map_embed, label: "Χάρτης Google (σύνδεσμος embed)", type: text, description: "Google Maps → Κοινοποίηση → Ενσωμάτωση χάρτη → αντιγράψτε μόνο τη διεύθυνση μέσα στο src=\"...\"" }
           - { name: license, label: Αριθμός ΜΗΤΕ, type: string }
+          - { name: form_key, label: "Κλειδί φόρμας διαθεσιμότητας (Web3Forms)", type: string, description: "Με αυτό το κλειδί τα αιτήματα της φόρμας «Ζητήστε διαθεσιμότητα» έρχονται κατευθείαν στο e-mail κρατήσεων. Το παίρνετε δωρεάν στο web3forms.com (γράφετε το e-mail κρατήσεων και σας έρχεται με e-mail). Αν μείνει κενό, η φόρμα ανοίγει την εφαρμογή e-mail του επισκέπτη." }
           - { name: eu_banner, label: Banner ΕΣΠΑ, type: image, options: { path: public/media/site } }
           - { name: eu_pdf, label: Αρχείο PDF ΕΣΠΑ, type: file, options: { path: public/media/site } }
 
