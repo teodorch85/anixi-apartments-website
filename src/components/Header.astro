@@ -7,7 +7,6 @@ interface Props { lang: Lang; path: string }
 const { lang, path } = Astro.props;
 const h = (p: string) => href(p, lang);
 const cur = (p: string) => (path === p ? 'page' : undefined);
-const subject = encodeURIComponent(ui('enquirySubject', lang));
 ---
 <header class="site-header">
   <div class="wrap">
@@ -39,7 +38,7 @@ const subject = encodeURIComponent(ui('enquirySubject', lang));
         <li><a href={h('/offers/')} aria-current={cur('/offers/')}>{ui('offers', lang)}</a></li>
         <li><a href={h('/contact/')} aria-current={cur('/contact/')}>{ui('contact', lang)}</a></li>
       </ul>
-      <a class="book-link" href={`mailto:${settings.booking_email}?subject=${subject}`}>{ui('book', lang)}</a>
+      <a class="book-link" href={h('/contact/') + '#request'}>{ui('book', lang)}</a>
       <div class="lang-switch">
         <a href={path} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
         <a href={'/el' + path} hreflang="el" lang="el" aria-current={lang === 'el' ? 'true' : undefined}>ΕΛ</a>
