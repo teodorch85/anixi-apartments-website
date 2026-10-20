@@ -257,3 +257,24 @@ form.request .status { margin: 0; padding: 14px; border-left: 4px solid var(--sa
 form.request .status.err { border-left-color: #b3261e; }
 form.request button:disabled { opacity: .6; cursor: wait; }
 #request { scroll-margin-top: 110px; }
+
+/* Contact bar – phones only */
+.contact-bar { display: none; }
+@media (max-width: 860px) {
+  .contact-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: flex;
+    background: #fff; border-top: 1px solid var(--line); box-shadow: 0 -4px 20px rgba(30, 32, 49, .08);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .contact-bar a {
+    flex: 1; display: grid; justify-items: center; gap: 2px; padding: 9px 4px 8px;
+    color: var(--ink); text-decoration: none; font-size: 12px; letter-spacing: .3px;
+  }
+  .contact-bar a + a { border-left: 1px solid var(--line); }
+  .contact-bar svg { width: 22px; height: 22px; }
+  .contact-bar a.primary { background: var(--sand); color: #fff; border-left: 0; }
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+  body.typing { padding-bottom: 0; }
+  body.typing .contact-bar { display: none; }
+  .back-top { bottom: calc(80px + env(safe-area-inset-bottom)); }
+}
