@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { settings } from '../lib/data';
+import { settings, location } from '../lib/data';
 import { href, ui, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang; path: string }
@@ -36,6 +36,7 @@ const cur = (p: string) => (path === p ? 'page' : undefined);
         </li>
         <li><a href={h('/prices/')} aria-current={cur('/prices/')}>{ui('prices', lang)}</a></li>
         <li><a href={h('/offers/')} aria-current={cur('/offers/')}>{ui('offers', lang)}</a></li>
+        {location.show_in_menu && <li><a href={h('/location/')} aria-current={cur('/location/')}>{ui('location', lang)}</a></li>}
         <li><a href={h('/contact/')} aria-current={cur('/contact/')}>{ui('contact', lang)}</a></li>
       </ul>
       <a class="book-link" href={h('/contact/') + '#request'}>{ui('book', lang)}</a>

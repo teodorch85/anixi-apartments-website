@@ -289,6 +289,26 @@ content:
               - { name: name, label: Όνομα κατηγορίας, component: t_string }
               - { name: photos, label: Φωτογραφίες, component: photos, options: { path: public/media/gallery } }
 
+      - name: location
+        label: "📍 Τοποθεσία"
+        type: file
+        path: src/data/location.json
+        format: json
+        fields:
+          - { name: show_in_menu, label: "Εμφάνιση στο μενού", type: boolean, description: "Ελέγξτε πρώτα τις αποστάσεις και τα κείμενα. Όσο είναι κλειστό, η σελίδα υπάρχει αλλά δεν φαίνεται στο μενού και δεν εμφανίζεται στο Google." }
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/location/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - { name: intro, label: Κείμενο, component: t_rich }
+          - { name: image, label: "Φωτογραφία πάνω από τον τίτλο (προαιρετικό)", component: photo, options: { path: public/media/location } }
+          - name: distances
+            label: Αποστάσεις
+            type: object
+            list: { collapsible: { collapsed: true, summary: "{fields.place.el} — {fields.distance}" } }
+            fields:
+              - { name: place, label: Μέρος, component: t_string }
+              - { name: distance, label: Απόσταση, type: string, description: "Π.χ. 38 km ή 300 m (προαιρετικό)" }
+              - { name: time, label: Χρόνος, component: t_string, description: "Π.χ. «35 λεπτά με αυτοκίνητο» (προαιρετικό)" }
+          - { name: getting_here, label: "Πώς θα έρθετε (κάτω από τον χάρτη)", component: t_rich }
+
       - name: privacy
         label: Πολιτική απορρήτου
         type: file

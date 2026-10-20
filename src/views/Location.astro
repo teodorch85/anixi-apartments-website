@@ -1,0 +1,51 @@
+---
+/** Location page: where we are, distances, how to get here and a large map. */
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import BookBox from '../components/BookBox.astro';
+import { settings, location, thumb } from '../lib/data';
+import { t, ui, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const title = t(location.title, lang);
+const intro = t(location.intro, lang);
+const place = encodeURIComponent('Anixi Apartments, Sisi, Crete');
+const directions = `https://www.google.com/maps/dir/?api=1&destination=${place}`;
+const open = `https://www.google.com/maps/search/?api=1&query=${place}`;
+---
+<Base lang={lang} title={title} path="/location/" image={location.image || undefined} noindex={!location.show_in_menu}
+  description={intro.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 160)}>
+  {location.image
+    ? <div class="banner" style={`background-image:url('${thumb(location.image, 960)}')`}><h1>{title}</h1></div>
+    : <div class="banner plain"><h1>{title}</h1></div>}
+
+  <section class="section">
+    <div class="wrap split" style="align-items:start">
+      <div class="prose" set:html={intro} />
+      <div>
+        <h2>{ui('distances', lang)}</h2>
+        <ul class="distances">
+          {location.distances.map((d) => (
+            <li><Icon name="pin" /><span class="place">{t(d.place, lang)}</span>
+              <span class="dist">{d.distance}{d.distance && t(d.time, lang) && ' · '}{t(d.time, lang)}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  {settings.map_embed && (
+    <div class="map location-map"><iframe src={settings.map_embed} loading="lazy" title={title} referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  )}
+  <div class="wrap map-actions">
+    <a class="btn btn-sand" href={directions} target="_blank" rel="noopener">{ui('directions', lang)}</a>
+    <a class="btn" href={open} target="_blank" rel="noopener">{ui('openInMaps', lang)}</a>
+  </div>
+
+  <section class="section-sm">
+    <div class="wrap prose" set:html={t(location.getting_here, lang)} />
+  </section>
+
+  <div class="wrap" style="padding:20px 20px 90px"><BookBox lang={lang} /></div>
+</Base>
