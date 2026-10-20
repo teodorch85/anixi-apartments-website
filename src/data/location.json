@@ -1,0 +1,150 @@
+{
+  "show_in_menu": false,
+  "title": {
+    "en": "Location",
+    "el": "Τοποθεσία"
+  },
+  "intro": {
+    "en": "<h2>On the sea in Sisi, Crete</h2><p>Anixi Apartments are right by the Aegean sea, just 30 m from the water, and about 5 minutes on foot from the picturesque little fishing village and harbour of Sisi, with its tavernas, cafés and shops. The small beach is 300 m away and the main sandy beach about 1.5 km.</p><p>Sisi lies on the north coast of Crete, between Heraklion and Agios Nikolaos – a quiet base from which you can easily explore the whole of eastern Crete.</p>",
+    "el": "<h2>Δίπλα στη θάλασσα, στο Σίσι Κρήτης</h2><p>Τα Anixi Apartments βρίσκονται δίπλα στο Αιγαίο, μόλις 30 μέτρα από το νερό, και περίπου 5 λεπτά με τα πόδια από το γραφικό ψαροχώρι και το λιμανάκι του Σισίου, με ταβέρνες, καφέ και μαγαζιά. Η μικρή παραλία απέχει 300 μ. και η μεγάλη αμμουδιά περίπου 1,5 χλμ.</p><p>Το Σίσι βρίσκεται στη βόρεια ακτή της Κρήτης, ανάμεσα στο Ηράκλειο και τον Άγιο Νικόλαο – ήσυχη βάση για να γνωρίσετε όλη την ανατολική Κρήτη.</p>"
+  },
+  "image": "",
+  "distances": [
+    {
+      "place": {
+        "en": "The sea",
+        "el": "Θάλασσα"
+      },
+      "distance": "30 m",
+      "time": {
+        "en": "",
+        "el": ""
+      }
+    },
+    {
+      "place": {
+        "en": "Small beach",
+        "el": "Μικρή παραλία"
+      },
+      "distance": "300 m",
+      "time": {
+        "en": "4 min walk",
+        "el": "4 λεπτά με τα πόδια"
+      }
+    },
+    {
+      "place": {
+        "en": "Sisi village & harbour",
+        "el": "Χωριό & λιμανάκι Σισίου"
+      },
+      "distance": "",
+      "time": {
+        "en": "5 min walk",
+        "el": "5 λεπτά με τα πόδια"
+      }
+    },
+    {
+      "place": {
+        "en": "Main sandy beach",
+        "el": "Μεγάλη αμμουδιά"
+      },
+      "distance": "1.5 km",
+      "time": {
+        "en": "",
+        "el": ""
+      }
+    },
+    {
+      "place": {
+        "en": "Malia",
+        "el": "Μάλια"
+      },
+      "distance": "9 km",
+      "time": {
+        "en": "12 min by car",
+        "el": "12 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Agios Nikolaos",
+        "el": "Άγιος Νικόλαος"
+      },
+      "distance": "28 km",
+      "time": {
+        "en": "30 min by car",
+        "el": "30 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Heraklion Airport (HER)",
+        "el": "Αεροδρόμιο Ηρακλείου"
+      },
+      "distance": "38 km",
+      "time": {
+        "en": "35 min by car",
+        "el": "35 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Elounda",
+        "el": "Ελούντα"
+      },
+      "distance": "40 km",
+      "time": {
+        "en": "40 min by car",
+        "el": "40 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Heraklion",
+        "el": "Ηράκλειο"
+      },
+      "distance": "45 km",
+      "time": {
+        "en": "40 min by car",
+        "el": "40 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Knossos",
+        "el": "Κνωσός"
+      },
+      "distance": "45 km",
+      "time": {
+        "en": "45 min by car",
+        "el": "45 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Lasithi Plateau",
+        "el": "Οροπέδιο Λασιθίου"
+      },
+      "distance": "35 km",
+      "time": {
+        "en": "45 min by car",
+        "el": "45 λεπτά με αυτοκίνητο"
+      }
+    },
+    {
+      "place": {
+        "en": "Plaka (boats to Spinalonga)",
+        "el": "Πλάκα (καραβάκια για Σπιναλόγκα)"
+      },
+      "distance": "45 km",
+      "time": {
+        "en": "50 min by car",
+        "el": "50 λεπτά με αυτοκίνητο"
+      }
+    }
+  ],
+  "getting_here": {
+    "en": "<h2>How to get here</h2><h3>By car</h3><p>From Heraklion Airport take the national road east towards Agios Nikolaos and leave it at the Sisi exit. Follow the road down to the village and the sea.</p><h3>By taxi</h3><p>Airport transfers are not included in our prices, but we cooperate with a local taxi driver at a very competitive rate. Contact us and we will arrange it for you.</p><h3>By bus</h3><p>KTEL buses between Heraklion and Agios Nikolaos stop at the Sisi junction on the national road.</p><h3>Parking</h3><p>Free parking is available for our guests.</p>",
+    "el": "<h2>Πώς θα έρθετε</h2><h3>Με αυτοκίνητο</h3><p>Από το αεροδρόμιο Ηρακλείου πάρτε την εθνική οδό ανατολικά προς Άγιο Νικόλαο και βγείτε στην έξοδο για Σίσι. Ακολουθήστε τον δρόμο προς το χωριό και τη θάλασσα.</p><h3>Με ταξί</h3><p>Η μεταφορά από/προς το αεροδρόμιο δεν περιλαμβάνεται στις τιμές μας, αλλά συνεργαζόμαστε με τοπικό ταξί σε πολύ καλή τιμή. Επικοινωνήστε μαζί μας και θα το κανονίσουμε.</p><h3>Με λεωφορείο</h3><p>Τα λεωφορεία ΚΤΕΛ Ηρακλείου – Αγίου Νικολάου σταματούν στη διασταύρωση του Σισίου στην εθνική οδό.</p><h3>Στάθμευση</h3><p>Υπάρχει δωρεάν χώρος στάθμευσης για τους επισκέπτες μας.</p>"
+  }
+}

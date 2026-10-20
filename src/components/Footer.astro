@@ -1,5 +1,5 @@
 ---
-import { settings } from '../lib/data';
+import { settings, location } from '../lib/data';
 import { t, href, ui, type Lang } from '../lib/i18n';
 import { telHref } from '../lib/data';
 
@@ -19,6 +19,7 @@ const year = new Date().getFullYear();
           <li><a href={h('/about/')}>{ui('about', lang)}</a></li>
           <li><a href={h('/prices/')}>{ui('prices', lang)}</a></li>
           <li><a href={h('/offers/')}>{ui('offers', lang)}</a></li>
+          {location.show_in_menu && <li><a href={h('/location/')}>{ui('location', lang)}</a></li>}
           <li><a href={h('/contact/')}>{ui('contact', lang)}</a></li>
         </ul>
       </div>

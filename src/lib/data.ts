@@ -10,6 +10,7 @@ import offersJson from '../data/offers.json';
 import galleryJson from '../data/gallery.json';
 import reviewsJson from '../data/reviews.json';
 import privacyJson from '../data/privacy.json';
+import locationJson from '../data/location.json';
 
 export type Room = {
   slug: string;
@@ -38,6 +39,7 @@ export const offers = offersJson;
 export const gallery = galleryJson;
 export const reviews = reviewsJson;
 export const privacy = privacyJson;
+export const location = locationJson;
 
 const roomFiles = import.meta.glob<Room>('../data/rooms/*.json', { eager: true, import: 'default' });
 
