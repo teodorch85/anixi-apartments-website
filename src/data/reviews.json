@@ -3,12 +3,85 @@
   "tripadvisor_url": "https://www.tripadvisor.co.uk/Hotel_Review-g608862-d659605-Reviews-Anixi_Apartments-Sissi_Lasithi_Prefecture_Crete.html",
   "items": [
     {
+      "show": false,
+      "restaurant": true,
+      "name": "Karoline G.",
+      "source": "google",
+      "rating": 5,
+      "date": "2026-08-15",
+      "text": "Anixi Bar is our absolute favorite in Sissi. Whether for lunch or dinner, the selection and the food are fabulous."
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Angela R",
+      "source": "tripadvisor",
+      "rating": 5,
+      "date": "2026-10-09",
+      "text": "We also ate there a few times in the evening. Again, lots of choice with themed nights through the week. Always cooked to perfection, presented well, service with a smile and reasonably priced."
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Hazel H",
+      "source": "tripadvisor",
+      "rating": 5,
+      "date": "2026-10-15",
+      "text": "The restaurant serves great food, and the portions huge. They also have daily specials which are lovely."
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Soraya B.",
+      "source": "google",
+      "rating": 5,
+      "date": "2026-08-15",
+      "text": "The view (especially for the sunset) is to die for, the cocktails are really good, and the food is divine!"
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Sasha A",
+      "source": "tripadvisor",
+      "rating": 5,
+      "date": "2026-09-20",
+      "text": "Full gluten free menu with so much choice including pizza, pasta, gyros. Attended the steak night on the Saturday and the T-Bone was perfectly cooked."
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Sharon K",
+      "source": "tripadvisor",
+      "rating": 5,
+      "date": "2026-10-15",
+      "text": "The addition of the outdoor eating area is brilliant & so chilled sitting overlooking the sea enjoying a lovely meal or even just a drink."
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Jo Powell",
+      "source": "tripadvisor",
+      "rating": 5,
+      "date": "2026-09-20",
+      "text": "We had dinner there a few times and the food as always was delicious. Eleni's moussaka is a must."
+    },
+    {
+      "show": false,
+      "restaurant": true,
+      "name": "Albionmick",
+      "source": "tripadvisor",
+      "rating": 5,
+      "date": "2026-09-20",
+      "text": "We visited the restaurant 3 times, twice for evening meal and once for an afternoon snack, and every visit was excellent. Very reasonably priced – we will be back next year."
+    },
+    {
       "show": true,
       "name": "Graham T",
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-11-12",
-      "text": "Amazing views and great food and drink. We were staying in an hotel behind the Anixi Apartments for a week in October and went for a drink at the poolside bar early into the holiday. We were really pleased that we did! The welcome from Anastasia and Eleni was lovely and the drinks very good and moderately priced. During the rest of our holiday we had either breakfast or lunch at the Anixi, the full cooked breakfast is perfectly executed and the freshly squeezed orange juice is just amazing.The location is ideal being a stones throw from the beach and a gentle stroll down the the port at Sisi. We were given a tour of the apartments by Elini and they all look lovely with lots of spaceand some amazingviews, we will definately be booking in when we next return to to Crete. This is a beutiful place rune by wonderfully kind people."
+      "text": "Amazing views and great food and drink. We were staying in an hotel behind the Anixi Apartments for a week in October and went for a drink at the poolside bar early into the holiday. We were really pleased that we did! The welcome from Anastasia and Eleni was lovely and the drinks very good and moderately priced. During the rest of our holiday we had either breakfast or lunch at the Anixi, the full cooked breakfast is perfectly executed and the freshly squeezed orange juice is just amazing.The location is ideal being a stones throw from the beach and a gentle stroll down the the port at Sisi. We were given a tour of the apartments by Elini and they all look lovely with lots of spaceand some amazingviews, we will definately be booking in when we next return to to Crete. This is a beutiful place rune by wonderfully kind people.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -16,7 +89,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-29",
-      "text": "Relaxing holiday, great food, Atmosphere. We have been going to Anixi Apartments for over 20 years, every time we go have a great relaxing holiday, with meeting new and old holiday makers who also enjoy the holiday at Anixi and surrounding are, great tavernas to visit in the area, Anixi make the best breakfast, and food throughout the day, cocktails and atmosphere, pool, and fantastic owners with fabulous Staff who will help you with any request. Gillian and David"
+      "text": "Relaxing holiday, great food, Atmosphere. We have been going to Anixi Apartments for over 20 years, every time we go have a great relaxing holiday, with meeting new and old holiday makers who also enjoy the holiday at Anixi and surrounding are, great tavernas to visit in the area, Anixi make the best breakfast, and food throughout the day, cocktails and atmosphere, pool, and fantastic owners with fabulous Staff who will help you with any request. Gillian and David",
+      "restaurant": false
     },
     {
       "show": true,
@@ -24,7 +98,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-28",
-      "text": "Still the best Absolutely the best place to spend nearly 6 weeks with wonderful views, food and wonderful staff, pleased to say that we have booked for next year as well. Easy to walk into sissi itself with plenty of restaurants and bars also with fantastic views, roll on next year"
+      "text": "Still the best Absolutely the best place to spend nearly 6 weeks with wonderful views, food and wonderful staff, pleased to say that we have booked for next year as well. Easy to walk into sissi itself with plenty of restaurants and bars also with fantastic views, roll on next year",
+      "restaurant": false
     },
     {
       "show": true,
@@ -32,7 +107,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-27",
-      "text": "Best breakfast in Sissi. So lucky to get 3 hot and sunny weeks in October. Anixi Appts are in a beautiful location. Thankyou Eleni, Jack, Anastasia and all. Your hospitality and warm welcome were really appreciated. Breakfast, lunch and evening drinks very much enjoyed and thanks for the football on TV. Always a pleasure to visit so enjoy your family time over the winter and we hope to see you next year."
+      "text": "Best breakfast in Sissi. So lucky to get 3 hot and sunny weeks in October. Anixi Appts are in a beautiful location. Thankyou Eleni, Jack, Anastasia and all. Your hospitality and warm welcome were really appreciated. Breakfast, lunch and evening drinks very much enjoyed and thanks for the football on TV. Always a pleasure to visit so enjoy your family time over the winter and we hope to see you next year.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -40,7 +116,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-12",
-      "text": "another fantastic holiday This little apartment complex never fails to deliver 100%, situated in a prime location, with stunning views overlooking nothing but ocean, our family's favorite place in the world and we have been returning now for 21 years, accidently stumbled across this amazing place when the children were small, quality of the food, drinks, service, cleanliness of the rooms has never changed always top quality, the owners and staff work really hard to ensure your stay is perfect and they always go that extra mile to ensure you have the best holiday experience, definitely the best place to stay in Sissi and the best food and drink ! wouldn't stay anywhere else."
+      "text": "another fantastic holiday This little apartment complex never fails to deliver 100%, situated in a prime location, with stunning views overlooking nothing but ocean, our family's favorite place in the world and we have been returning now for 21 years, accidently stumbled across this amazing place when the children were small, quality of the food, drinks, service, cleanliness of the rooms has never changed always top quality, the owners and staff work really hard to ensure your stay is perfect and they always go that extra mile to ensure you have the best holiday experience, definitely the best place to stay in Sissi and the best food and drink ! wouldn't stay anywhere else.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -48,7 +125,8 @@
       "source": "google",
       "rating": 5,
       "date": "2023-10-10",
-      "text": "A little slice of heaven. Great food, staff, apartments and pool area very close to Sisi harbour. Highly recommended. The clientele often return year after year which speaks for itself."
+      "text": "A little slice of heaven. Great food, staff, apartments and pool area very close to Sisi harbour. Highly recommended. The clientele often return year after year which speaks for itself.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -56,7 +134,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-10",
-      "text": "Wonderful stay at Anixi Apartments. Although we have travelled to Crete several times, this was our first time in Sissi. After reading the reviews for Anixi apartments, we decided to book a holiday with them. We were so pleased we did! We immediately felt comfortable and relaxed. As previous reviewers have said, the whole team are just so friendly and helpful with a willingness to ensure that everyone enjoys their stay. We had the bed and breakfast option with all the scrumptious food being freshly prepared and cooked to order. We also tried many of the traditional Greek dishes from the evening menu which were equally as delicious. One of our delights was the view from our balcony (room 204) and listening to the waves crashing on the shore, lulling us to sleep at night! A big thank you to Elina, Barbara, Jack, Anastasia and all the team and not forgetting Sunny! Thank you so much for a lovely stay, we look forward to our next visit!"
+      "text": "Wonderful stay at Anixi Apartments. Although we have travelled to Crete several times, this was our first time in Sissi. After reading the reviews for Anixi apartments, we decided to book a holiday with them. We were so pleased we did! We immediately felt comfortable and relaxed. As previous reviewers have said, the whole team are just so friendly and helpful with a willingness to ensure that everyone enjoys their stay. We had the bed and breakfast option with all the scrumptious food being freshly prepared and cooked to order. We also tried many of the traditional Greek dishes from the evening menu which were equally as delicious. One of our delights was the view from our balcony (room 204) and listening to the waves crashing on the shore, lulling us to sleep at night! A big thank you to Elina, Barbara, Jack, Anastasia and all the team and not forgetting Sunny! Thank you so much for a lovely stay, we look forward to our next visit!",
+      "restaurant": false
     },
     {
       "show": true,
@@ -64,7 +143,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-09",
-      "text": "Einfach nur empfehlenswert Wundervoller, erholsamer Urlaub mit traumhafter Aussicht aufs Meer bei superfreundlichen, symphatischen Gastgebern. Das Essen im angrenzenden Restaurant ist super und bei kalten Getränken zaubert einem Jack jedes Fußballspiel auf die Leinwände, das sportverrückte wie wir sehen wollten. Die durchweg angenehmen Gäste tragen ihr übriges zum Rundum-Wohlfühl-Urlaub bei. Eleni, Yanni wir freuen uns auf 2027, wenn wir wieder kommen werden."
+      "text": "Einfach nur empfehlenswert Wundervoller, erholsamer Urlaub mit traumhafter Aussicht aufs Meer bei superfreundlichen, symphatischen Gastgebern. Das Essen im angrenzenden Restaurant ist super und bei kalten Getränken zaubert einem Jack jedes Fußballspiel auf die Leinwände, das sportverrückte wie wir sehen wollten. Die durchweg angenehmen Gäste tragen ihr übriges zum Rundum-Wohlfühl-Urlaub bei. Eleni, Yanni wir freuen uns auf 2027, wenn wir wieder kommen werden.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -72,7 +152,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-10-07",
-      "text": "I will keep coming back it's so good. I can't thank the people who have Anixi apartments in Sissi enough, they look after their guests like royalty, the food is delicious what ever I have eaten there, the pool is perfect and right next to the sea , the rooms are spotless and nothing is to much trouble, this is the best holiday I could wish for and I've been to many places."
+      "text": "I will keep coming back it's so good. I can't thank the people who have Anixi apartments in Sissi enough, they look after their guests like royalty, the food is delicious what ever I have eaten there, the pool is perfect and right next to the sea , the rooms are spotless and nothing is to much trouble, this is the best holiday I could wish for and I've been to many places.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -80,7 +161,8 @@
       "source": "google",
       "rating": 5,
       "date": "2023-09-29",
-      "text": "Superb apartments with superb service. Food amazing, a truly wonderful place to relax with lovely views across sissi"
+      "text": "Superb apartments with superb service. Food amazing, a truly wonderful place to relax with lovely views across sissi",
+      "restaurant": false
     },
     {
       "show": true,
@@ -88,7 +170,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-09-21",
-      "text": "Simply the Best From booking to leaving, everything went like clockwork - thanks to Eleni, Bill, Jack, Barbara and the rest of the family. Great location, beautiful sunset and easy access to the whole of Sissi. We have visited before but this is the first time we have stayed and are definitely going back next year...and the year after....and..... Everyone was very welcoming and friendly throughout our stay and nothing was too much trouble, The rooms were spacious, comfortable and clean (thanks to Barbara) and provided us with a lovely view of the swimming pool and beautiful Aegeon sea. Plenty of fresh local food, beautifully presented. Good local wines & fab cocktails - thank you Jack. The swimming pool was so clean and. easy to access and gave us much enjoyment. One of the most relaxing and peaceful holidays ever. Thank you and see you soon! June and Chris (room 104) September 2023"
+      "text": "Simply the Best From booking to leaving, everything went like clockwork - thanks to Eleni, Bill, Jack, Barbara and the rest of the family. Great location, beautiful sunset and easy access to the whole of Sissi. We have visited before but this is the first time we have stayed and are definitely going back next year...and the year after....and..... Everyone was very welcoming and friendly throughout our stay and nothing was too much trouble, The rooms were spacious, comfortable and clean (thanks to Barbara) and provided us with a lovely view of the swimming pool and beautiful Aegeon sea. Plenty of fresh local food, beautifully presented. Good local wines & fab cocktails - thank you Jack. The swimming pool was so clean and. easy to access and gave us much enjoyment. One of the most relaxing and peaceful holidays ever. Thank you and see you soon! June and Chris (room 104) September 2023",
+      "restaurant": false
     },
     {
       "show": true,
@@ -96,7 +179,8 @@
       "source": "tripadvisor",
       "rating": 5,
       "date": "2023-09-20",
-      "text": "Top locatie en prijs! als je hier eenmaal 1x bent geweest wil je niet meer anders. de eigenaren zijn super lief en aardig daarnaast is er voor elk budget een passende kamer en is het eten gewoon goed en vriendelijk geprijsd. dit hotel beschikt over een eigen zwembad en een fantastisch uitzicht op open zee."
+      "text": "Top locatie en prijs! als je hier eenmaal 1x bent geweest wil je niet meer anders. de eigenaren zijn super lief en aardig daarnaast is er voor elk budget een passende kamer en is het eten gewoon goed en vriendelijk geprijsd. dit hotel beschikt over een eigen zwembad en een fantastisch uitzicht op open zee.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -104,7 +188,8 @@
       "source": "google",
       "rating": 5,
       "date": "2022-10-02",
-      "text": "Stayed here again in September. Beautiful location,lovely accomadation, and amazing staff .this is a one in a million beautiful place.cannot recommended highly enough. All the staff are fantastic and cannot do enough to make your stay as pleasant as possible,mumma's food is to die for and you will certainly be full to bursting. Jack and vasilis the barmen create some brilliant cocktails. I hope ive not forgotten anyone because this is really a piece of heaven. Hope to see you all again soon Thankyou do much for our much needed holiday xx"
+      "text": "Stayed here again in September. Beautiful location,lovely accomadation, and amazing staff .this is a one in a million beautiful place.cannot recommended highly enough. All the staff are fantastic and cannot do enough to make your stay as pleasant as possible,mumma's food is to die for and you will certainly be full to bursting. Jack and vasilis the barmen create some brilliant cocktails. I hope ive not forgotten anyone because this is really a piece of heaven. Hope to see you all again soon Thankyou do much for our much needed holiday xx",
+      "restaurant": false
     },
     {
       "show": true,
@@ -112,7 +197,8 @@
       "source": "google",
       "rating": 5,
       "date": "2022-07-08",
-      "text": "We ate here on an evening. We enjoyd a wonderfull sunset (perfect place to watch it) from the terasse. We had very good cocktails. Lastly wonderfull diner on top of good quality with a very Nice service and positive vibe."
+      "text": "We ate here on an evening. We enjoyd a wonderfull sunset (perfect place to watch it) from the terasse. We had very good cocktails. Lastly wonderfull diner on top of good quality with a very Nice service and positive vibe.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -120,7 +206,8 @@
       "source": "google",
       "rating": 5,
       "date": "2021-10-25",
-      "text": "A magical place to sit by the sea and enjoy breakfast, lunch or dinner, or if you prefer, take a swim in the inviting pool. Location is ideal being close to the sandy beach and only a short walk into the centre of Sissi. All this and such friendly owners. Oh, and if you want to sip cocktails whilst watching TV, you can do that as well. Have a good holiday, we did."
+      "text": "A magical place to sit by the sea and enjoy breakfast, lunch or dinner, or if you prefer, take a swim in the inviting pool. Location is ideal being close to the sandy beach and only a short walk into the centre of Sissi. All this and such friendly owners. Oh, and if you want to sip cocktails whilst watching TV, you can do that as well. Have a good holiday, we did.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -128,7 +215,8 @@
       "source": "google",
       "rating": 5,
       "date": "2020-10-13",
-      "text": "Anixi is a family run business but feels more like visiting family as they warmly welcome you into a superbly run set of apartments with beautiful pool, bar and restaurant. All staff are friendly, helpful and caring, nothing is too much for them. Our room (108) was amazing! Clean, comfortable, spacious with beautiful unbroken views of the Mediterranean Sea. No worries regarding covid. All precautions were considered and staff wore face masks at all times. Food and drink fantastic. Can honestly highly recommend Anixi. Thank you Eleni, Vasilis and Jack for making our holiday so special and memorable. We'll be back! X"
+      "text": "Anixi is a family run business but feels more like visiting family as they warmly welcome you into a superbly run set of apartments with beautiful pool, bar and restaurant. All staff are friendly, helpful and caring, nothing is too much for them. Our room (108) was amazing! Clean, comfortable, spacious with beautiful unbroken views of the Mediterranean Sea. No worries regarding covid. All precautions were considered and staff wore face masks at all times. Food and drink fantastic. Can honestly highly recommend Anixi. Thank you Eleni, Vasilis and Jack for making our holiday so special and memorable. We'll be back! X",
+      "restaurant": false
     },
     {
       "show": true,
@@ -136,7 +224,8 @@
       "source": "google",
       "rating": 5,
       "date": "2020-09-11",
-      "text": "Without a doubt an absolute gem. Wonderful ambience, fantastic setting and an utterly relaxing holiday. Traditional, well cooked food in addition to a good selection of bar snacks; tasteful and well decorated pristine apartments; engaging and friendly staff and owners complemented by lovely guests. It is impossible to speak more highly. Once here, you will not want to go anywhere else."
+      "text": "Without a doubt an absolute gem. Wonderful ambience, fantastic setting and an utterly relaxing holiday. Traditional, well cooked food in addition to a good selection of bar snacks; tasteful and well decorated pristine apartments; engaging and friendly staff and owners complemented by lovely guests. It is impossible to speak more highly. Once here, you will not want to go anywhere else.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -144,7 +233,8 @@
       "source": "google",
       "rating": 5,
       "date": "2019-08-10",
-      "text": "What a spot!! Balcony overlooking the sea, very friendly service - our anniversary on our second night and as we returned to the bat from our evening meal they brought us a cake! Apparently the cleaner had seen a couple of cards in our room! Lots of friendly holiday makers. Good food. Reasonable prices. Can't praise it enough!"
+      "text": "What a spot!! Balcony overlooking the sea, very friendly service - our anniversary on our second night and as we returned to the bat from our evening meal they brought us a cake! Apparently the cleaner had seen a couple of cards in our room! Lots of friendly holiday makers. Good food. Reasonable prices. Can't praise it enough!",
+      "restaurant": false
     },
     {
       "show": true,
@@ -152,7 +242,8 @@
       "source": "google",
       "rating": 5,
       "date": "2019-07-02",
-      "text": "Anixi is an amazing find and a wonderful place to stay whilst on the island of Crete. It's family owned, and each of the staff are amazingly friendly and warm. The rooms are basic, but incredibly clean. We would have appreciated our toilet bin being emptied daily but this wasn't a big problem. The food is delicious - actually, it provides some of the highest quality, biggest portions in the area. There's a huge range of cocktails. When you speak to the guests staying here you'll struggle to find anyone who hasn't stayed here many times before. People just keep coming back, year after year, this must tell you something! We were also a big fan of the 'no young children' policy. If you like to relax by the pool without the sounds of kids running around screaming then this is the place for you👍 If you're considering booking at an alternative all inclusive accommodation you might want to reconsider, and purchase your flights, hotel and budget for your food separately. Many people on all inclusive end up eating out (and at Anixi) because the food is so much better. You're also be supporting a genuine small family business."
+      "text": "Anixi is an amazing find and a wonderful place to stay whilst on the island of Crete. It's family owned, and each of the staff are amazingly friendly and warm. The rooms are basic, but incredibly clean. We would have appreciated our toilet bin being emptied daily but this wasn't a big problem. The food is delicious - actually, it provides some of the highest quality, biggest portions in the area. There's a huge range of cocktails. When you speak to the guests staying here you'll struggle to find anyone who hasn't stayed here many times before. People just keep coming back, year after year, this must tell you something! We were also a big fan of the 'no young children' policy. If you like to relax by the pool without the sounds of kids running around screaming then this is the place for you👍 If you're considering booking at an alternative all inclusive accommodation you might want to reconsider, and purchase your flights, hotel and budget for your food separately. Many people on all inclusive end up eating out (and at Anixi) because the food is so much better. You're also be supporting a genuine small family business.",
+      "restaurant": false
     },
     {
       "show": true,
@@ -160,7 +251,8 @@
       "source": "google",
       "rating": 5,
       "date": "2018-06-16",
-      "text": "Room was basic but extremely clean and comfortable, and the balcony was very pleasant with a cool sea breeze which helped to keep the temperature down. Hospitality was excellent - nothing too much trouble, sea view, sunsets and sunrises were WOW feature. Food excellent with good choices - lovely decor - pleasant pool, and the apartments are nicely situated not too far from the local shops and fishing port. Can't wait to return, as many of the people we met returned year after year."
+      "text": "Room was basic but extremely clean and comfortable, and the balcony was very pleasant with a cool sea breeze which helped to keep the temperature down. Hospitality was excellent - nothing too much trouble, sea view, sunsets and sunrises were WOW feature. Food excellent with good choices - lovely decor - pleasant pool, and the apartments are nicely situated not too far from the local shops and fishing port. Can't wait to return, as many of the people we met returned year after year.",
+      "restaurant": false
     }
   ]
 }

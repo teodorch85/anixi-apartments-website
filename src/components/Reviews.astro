@@ -1,0 +1,29 @@
+---
+/** Guest reviews carousel with links to all reviews on Google / TripAdvisor. Used on the home and restaurant pages. */
+import Carousel from './Carousel.astro';
+import { reviews } from '../lib/data';
+import { ui, type Lang } from '../lib/i18n';
+
+type Review = (typeof reviews.items)[number];
+interface Props { lang: Lang; title: string; items: Review[] }
+const { lang, title, items } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="section">
+    <div class="wrap">
+      <h2 class="center">{title}</h2>
+      <Carousel label={title}>
+        {items.map((r) => (
+          <figure class="review" style="margin:0">
+            <div class="stars" aria-label={`${r.rating}/5`}>{'★'.repeat(r.rating)}</div>
+            <blockquote style="margin:0">{r.text}</blockquote>
+            <figcaption class="who">{r.name} <span class="src">· {r.source}</span></figcaption>
+          </figure>
+        ))}
+      </Carousel>
+      {reviews.google_url && (
+        <p class="center" style="margin-top:20px">{ui('readReviews', lang)} <a href={reviews.google_url} target="_blank" rel="noopener">Google</a>{reviews.tripadvisor_url && <> · <a href={reviews.tripadvisor_url} target="_blank" rel="noopener">TripAdvisor</a></>}</p>
+      )}
+    </div>
+  </section>
+)}

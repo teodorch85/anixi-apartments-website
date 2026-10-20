@@ -326,12 +326,13 @@ content:
     format: json
     fields:
       - name: items
-        description: "Στην αρχική εμφανίζονται έως 8 κριτικές με ενεργό το «Εμφάνιση». Αντιγράψτε νέες κριτικές από Google/TripAdvisor. 👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/"
+        description: "Στην αρχική εμφανίζονται έως 8 κριτικές με ενεργό το «Εμφάνιση στην αρχική». Στη σελίδα Εστιατόριο & Pool Bar εμφανίζονται όσες έχουν ενεργό το «Εμφάνιση στη σελίδα Εστιατόριο». Αντιγράψτε νέες κριτικές από Google/TripAdvisor. 👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/"
         label: Κριτικές επισκεπτών
         type: object
         list: { collapsible: { collapsed: true, summary: "{fields.name} · {fields.source} · {fields.rating}★" } }
         fields:
           - { name: show, label: Εμφάνιση στην αρχική, type: boolean, default: true }
+          - { name: restaurant, label: "Εμφάνιση στη σελίδα Εστιατόριο & Pool Bar", type: boolean, default: false }
           - { name: name, label: Όνομα επισκέπτη, type: string }
           - { name: source, label: Πηγή, type: select, options: { values: [google, tripadvisor, booking, email] } }
           - { name: rating, label: Αστέρια (1–5), type: number, default: 5 }
