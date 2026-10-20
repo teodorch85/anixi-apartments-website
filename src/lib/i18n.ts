@@ -95,6 +95,7 @@ export const UI = {
   },
   period: { en: 'Period', el: 'Περίοδος' },
   otherRooms: { en: 'Other rooms', el: 'Άλλα δωμάτια' },
+  foodReviews: { en: 'What our guests say about the food', el: 'Τι λένε οι επισκέπτες για την κουζίνα μας' },
   readReviews: { en: 'Read more reviews on', el: 'Περισσότερες κριτικές στο' },
   rights: { en: 'All Rights Reserved.', el: 'Με επιφύλαξη παντός δικαιώματος.' },
   privacy: { en: 'Privacy Policy', el: 'Πολιτική απορρήτου' },

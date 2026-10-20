@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import HeroVideo from '../components/HeroVideo.astro';
 import Carousel from '../components/Carousel.astro';
+import Reviews from '../components/Reviews.astro';
 import RoomCard from '../components/RoomCard.astro';
 import { home, rooms, reviews, thumb } from '../lib/data';
 import { t, href, ui, type Lang } from '../lib/i18n';
@@ -86,23 +87,5 @@ const strip = (s: string) => s.replace(/<[^>]+>/g, '').slice(0, 160);
     </section>
   )}
 
-  {home.reviews.show && shownReviews.length > 0 && (
-    <section class="section">
-      <div class="wrap">
-        <h2 class="center">{t(home.reviews.title, lang)}</h2>
-        <Carousel label={t(home.reviews.title, lang)}>
-          {shownReviews.map((r) => (
-            <figure class="review" style="margin:0">
-              <div class="stars" aria-label={`${r.rating}/5`}>{'★'.repeat(r.rating)}</div>
-              <blockquote style="margin:0">{r.text}</blockquote>
-              <figcaption class="who">{r.name} <span class="src">· {r.source}</span></figcaption>
-            </figure>
-          ))}
-        </Carousel>
-        {reviews.google_url && (
-          <p class="center" style="margin-top:20px">{ui('readReviews', lang)} <a href={reviews.google_url} target="_blank" rel="noopener">Google</a>{reviews.tripadvisor_url && <> · <a href={reviews.tripadvisor_url} target="_blank" rel="noopener">TripAdvisor</a></>}</p>
-        )}
-      </div>
-    </section>
-  )}
+  {home.reviews.show && <Reviews lang={lang} title={t(home.reviews.title, lang)} items={shownReviews} />}
 </Base>
