@@ -1,0 +1,27 @@
+---
+/** Bar fixed to the bottom of the screen on phones: one tap to call, message or ask for availability. */
+import Icon from './Icon.astro';
+import { settings, telHref } from '../lib/data';
+import { ui, href, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const digits = (n: string) => n.replace(/[^\d]/g, '');
+const phone = settings.bar_phone?.trim() || settings.phones[0]?.number;
+const wa = settings.whatsapp?.trim();
+const viber = settings.viber?.trim();
+---
+<nav class="contact-bar" aria-label={ui('contact', lang)}>
+  {phone && <a href={telHref(phone)}><Icon name="phone" /><span>{ui('call', lang)}</span></a>}
+  {wa && <a href={`https://wa.me/${digits(wa)}`} target="_blank" rel="noopener"><Icon name="whatsapp" /><span>WhatsApp</span></a>}
+  {viber && <a href={`viber://chat?number=%2B${digits(viber)}`}><Icon name="viber" /><span>Viber</span></a>}
+  <a class="primary" href={href('/contact/', lang) + '#request'}><Icon name="calendar" /><span>{ui('availability', lang)}</span></a>
+</nav>
+
+<script>
+  // While the guest types (e.g. in the request form) the phone keyboard is open – hide the bar so it never covers a field.
+  const fields = 'input, textarea, select';
+  addEventListener('focusin', (e) => { if ((e.target as Element).matches?.(fields)) document.body.classList.add('typing'); });
+  // Moving from one field to the next fires focusout then focusin – only show the bar again once no field has focus.
+  addEventListener('focusout', () => setTimeout(() => { if (!document.activeElement?.matches(fields)) document.body.classList.remove('typing'); }));
+</script>

@@ -47,6 +47,8 @@ export const UI = {
     el: 'Χωρίς μεσάζοντες και προμήθειες – επικοινωνήστε απευθείας μαζί μας τηλεφωνικά ή με e-mail, με τις ημερομηνίες και τον αριθμό ατόμων.',
   },
   callUs: { en: 'Call us', el: 'Τηλεφωνήστε μας' },
+  call: { en: 'Call', el: 'Κλήση' },
+  availability: { en: 'Availability', el: 'Διαθεσιμότητα' },
   emailUs: { en: 'E-mail us', el: 'Στείλτε e-mail' },
   address: { en: 'Address', el: 'Διεύθυνση' },
   phone: { en: 'Phone', el: 'Τηλέφωνο' },

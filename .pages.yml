@@ -338,6 +338,8 @@ content:
       - { name: emails, label: E-mail, type: string, list: true }
       - { name: booking_email, label: E-mail κρατήσεων, type: string, description: "Εδώ πηγαίνουν το κουμπί «Κράτηση» και η φόρμα επικοινωνίας." }
       - { name: whatsapp, label: WhatsApp, type: string, description: "Αριθμός με κωδικό χώρας, π.χ. +306947840190. Αφήστε κενό για να μην εμφανίζεται κουμπί WhatsApp." }
+      - { name: viber, label: Viber, type: string, description: "Αριθμός με κωδικό χώρας, π.χ. +306947840191. Αφήστε κενό για να μην εμφανίζεται κουμπί Viber." }
+      - { name: bar_phone, label: "Τηλέφωνο για το κουμπί «Κλήση» στα κινητά", type: string, description: "Η μπάρα στο κάτω μέρος της οθόνης στα κινητά καλεί αυτόν τον αριθμό. Αν μείνει κενό, καλεί το πρώτο τηλέφωνο της λίστας." }
       - { name: facebook, label: Σελίδα Facebook, type: string }
       - { name: address, label: Διεύθυνση, component: t_string }
       - name: advanced
