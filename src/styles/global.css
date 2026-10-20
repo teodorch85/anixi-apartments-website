@@ -14,7 +14,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* Smooth in-page scrolling, but not when a page opens at an #anchor: a smooth jump there gets cut short by late layout. */
+@media (prefers-reduced-motion: no-preference) { html:not(:has(:target)) { scroll-behavior: smooth; } }
 body {
   margin: 0;
   background: var(--bg);
@@ -252,7 +253,6 @@ form.request select {
 }
 form.request textarea { min-height: 110px; }
 form.request .nights { margin: -6px 0 0; font-size: 13px; min-height: 1em; }
-form.request .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 form.request .status { margin: 0; padding: 14px; border-left: 4px solid var(--sand); background: var(--bg-soft); }
 form.request .status.err { border-left-color: #b3261e; }
 form.request button:disabled { opacity: .6; cursor: wait; }
