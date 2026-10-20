@@ -8,138 +8,128 @@
     "en": "<h2>On the sea in Sisi, Crete</h2><p>Anixi Apartments are right by the Aegean sea, just 30 m from the water, and about 5 minutes on foot from the picturesque little fishing village and harbour of Sisi, with its tavernas, cafés and shops. The small beach is 300 m away and the main sandy beach about 1.5 km.</p><p>Sisi lies on the north coast of Crete, between Heraklion and Agios Nikolaos – a quiet base from which you can easily explore the whole of eastern Crete.</p>",
     "el": "<h2>Δίπλα στη θάλασσα, στο Σίσι Κρήτης</h2><p>Τα Anixi Apartments βρίσκονται δίπλα στο Αιγαίο, μόλις 30 μέτρα από το νερό, και περίπου 5 λεπτά με τα πόδια από το γραφικό ψαροχώρι και το λιμανάκι του Σισίου, με ταβέρνες, καφέ και μαγαζιά. Η μικρή παραλία απέχει 300 μ. και η μεγάλη αμμουδιά περίπου 1,5 χλμ.</p><p>Το Σίσι βρίσκεται στη βόρεια ακτή της Κρήτης, ανάμεσα στο Ηράκλειο και τον Άγιο Νικόλαο – ήσυχη βάση για να γνωρίσετε όλη την ανατολική Κρήτη.</p>"
   },
-  "image": "",
   "distances": [
     {
       "place": {
-        "en": "The sea",
-        "el": "Θάλασσα"
+        "el": "Θάλασσα",
+        "en": "The sea"
       },
-      "distance": "30 m",
-      "time": {
-        "en": "",
-        "el": ""
-      }
+      "distance": "30 m"
     },
     {
       "place": {
-        "en": "Small beach",
-        "el": "Μικρή παραλία"
+        "el": "Μικρή παραλία",
+        "en": "Small beach"
       },
       "distance": "300 m",
       "time": {
-        "en": "4 min walk",
-        "el": "4 λεπτά με τα πόδια"
+        "el": "4 λεπτά με τα πόδια",
+        "en": "4 min walk"
       }
     },
     {
       "place": {
-        "en": "Sisi village & harbour",
-        "el": "Χωριό & λιμανάκι Σισίου"
+        "el": "Χωριό & λιμανάκι Σισίου",
+        "en": "Sisi village & harbour"
       },
-      "distance": "",
       "time": {
-        "en": "5 min walk",
-        "el": "5 λεπτά με τα πόδια"
+        "el": "5 λεπτά με τα πόδια",
+        "en": "5 min walk"
       }
     },
     {
       "place": {
-        "en": "Main sandy beach",
-        "el": "Μεγάλη αμμουδιά"
+        "el": "Μεγάλη αμμουδιά",
+        "en": "Main sandy beach"
       },
-      "distance": "1.5 km",
-      "time": {
-        "en": "",
-        "el": ""
-      }
+      "distance": "1.5 km"
     },
     {
       "place": {
-        "en": "Malia",
-        "el": "Μάλια"
+        "el": "Μάλια",
+        "en": "Malia"
       },
-      "distance": "9 km",
+      "distance": "8 km",
       "time": {
-        "en": "12 min by car",
-        "el": "12 λεπτά με αυτοκίνητο"
+        "el": "12 λεπτά με αυτοκίνητο",
+        "en": "12 min by car"
       }
     },
     {
       "place": {
-        "en": "Agios Nikolaos",
-        "el": "Άγιος Νικόλαος"
+        "el": "Άγιος Νικόλαος",
+        "en": "Agios Nikolaos"
       },
       "distance": "28 km",
       "time": {
-        "en": "30 min by car",
-        "el": "30 λεπτά με αυτοκίνητο"
+        "el": "30 λεπτά με αυτοκίνητο",
+        "en": "30 min by car"
       }
     },
     {
       "place": {
-        "en": "Heraklion Airport (HER)",
-        "el": "Αεροδρόμιο Ηρακλείου"
+        "el": "Αεροδρόμιο Ηρακλείου",
+        "en": "Heraklion Airport (HER)"
       },
       "distance": "38 km",
       "time": {
-        "en": "35 min by car",
-        "el": "35 λεπτά με αυτοκίνητο"
+        "el": "35 λεπτά με αυτοκίνητο",
+        "en": "35 min by car"
       }
     },
     {
       "place": {
-        "en": "Elounda",
-        "el": "Ελούντα"
+        "el": "Ελούντα",
+        "en": "Elounda"
       },
       "distance": "40 km",
       "time": {
-        "en": "40 min by car",
-        "el": "40 λεπτά με αυτοκίνητο"
+        "el": "40 λεπτά με αυτοκίνητο",
+        "en": "40 min by car"
       }
     },
     {
       "place": {
-        "en": "Heraklion",
-        "el": "Ηράκλειο"
+        "el": "Ηράκλειο",
+        "en": "Heraklion"
       },
       "distance": "45 km",
       "time": {
-        "en": "40 min by car",
-        "el": "40 λεπτά με αυτοκίνητο"
+        "el": "40 λεπτά με αυτοκίνητο",
+        "en": "40 min by car"
       }
     },
     {
       "place": {
-        "en": "Knossos",
-        "el": "Κνωσός"
+        "el": "Κνωσός",
+        "en": "Knossos"
       },
       "distance": "45 km",
       "time": {
-        "en": "45 min by car",
-        "el": "45 λεπτά με αυτοκίνητο"
+        "el": "45 λεπτά με αυτοκίνητο",
+        "en": "45 min by car"
       }
     },
     {
       "place": {
-        "en": "Lasithi Plateau",
-        "el": "Οροπέδιο Λασιθίου"
+        "el": "Οροπέδιο Λασιθίου",
+        "en": "Lasithi Plateau"
       },
       "distance": "35 km",
       "time": {
-        "en": "45 min by car",
-        "el": "45 λεπτά με αυτοκίνητο"
+        "el": "45 λεπτά με αυτοκίνητο",
+        "en": "45 min by car"
       }
     },
     {
       "place": {
-        "en": "Plaka (boats to Spinalonga)",
-        "el": "Πλάκα (καραβάκια για Σπιναλόγκα)"
+        "el": "Πλάκα (καραβάκια για Σπιναλόγκα)",
+        "en": "Plaka (boats to Spinalonga)"
       },
       "distance": "45 km",
       "time": {
-        "en": "50 min by car",
-        "el": "50 λεπτά με αυτοκίνητο"
+        "el": "50 λεπτά με αυτοκίνητο",
+        "en": "50 min by car"
       }
     }
   ],
