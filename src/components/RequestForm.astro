@@ -10,16 +10,16 @@ import { t, ui, href, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const key = (settings as { form_key?: string }).form_key?.trim() || '';
+const key = settings.form_key.trim();
 const msgs = {
   ok: ui('reqSent', lang), err: ui('reqError', lang), sending: ui('reqSending', lang),
-  nights: ui('reqNights', lang), adults: ui('adults', lang), children: ui('children', lang), dates: ui('reqDatesInvalid', lang), subject: ui('reqSubject', lang),
+  nights: ui('reqNights', lang), adults: ui('adults', lang), children: ui('children', lang), dates: ui('reqDatesInvalid', lang), subject: ui('reqSubject', lang), question: ui('enquirySubject', lang),
 };
 ---
 <form class="enquiry request" data-key={key} data-to={settings.booking_email} data-lang={lang} data-msgs={JSON.stringify(msgs)}>
   <div class="row">
-    <label><span>{ui('arrival', lang)} *</span><input name="arrival" type="date" required /></label>
-    <label><span>{ui('departure', lang)} *</span><input name="departure" type="date" required /></label>
+    <label><span>{ui('arrival', lang)}</span><input name="arrival" type="date" /></label>
+    <label><span>{ui('departure', lang)}</span><input name="departure" type="date" /></label>
   </div>
   <p class="nights" aria-live="polite"></p>
   <div class="row">
@@ -42,7 +42,7 @@ const msgs = {
   </div>
   <label><span>{ui('phoneOptional', lang)}</span><input name="phone" type="tel" autocomplete="tel" /></label>
   <label><span>{ui('message', lang)}</span><textarea name="message"></textarea></label>
-  <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <input type="checkbox" name="botcheck" hidden />
   <div><button class="btn btn-sand" type="submit">{ui('reqSend', lang)}</button></div>
   <p class="hint">{key ? ui('reqNote', lang) : ui('formNote', lang)} <a href={href('/privacy-policy-2/', lang)}>{ui('privacy', lang)}</a></p>
   <p class="status" role="status" aria-live="polite" hidden></p>
@@ -50,7 +50,9 @@ const msgs = {
 
 <script>
   const fmt = (v: string) => (v ? v.split('-').reverse().join('/') : '');
-  const iso = (d: Date) => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+  // Date-input values ('2027-07-12') parse as UTC midnight, so day arithmetic stays in UTC – no time-zone shifts.
+  const addDays = (v: string, n: number) => new Date(Date.parse(v) + n * 864e5).toISOString().slice(0, 10);
+  const localToday = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); };
 
   document.querySelectorAll<HTMLFormElement>('form.request').forEach((f) => {
     const m = JSON.parse(f.dataset.msgs || '{}');
@@ -61,24 +63,22 @@ const msgs = {
     const btn = f.querySelector<HTMLButtonElement>('button[type=submit]')!;
 
     // No past dates; departure at least one night after arrival.
-    const today = new Date();
-    arr.min = iso(today);
-    dep.min = iso(new Date(today.getTime() + 864e5));
+    arr.min = localToday();
+    dep.min = addDays(arr.min, 1);
     const nights = () => (arr.value && dep.value ? Math.round((Date.parse(dep.value) - Date.parse(arr.value)) / 864e5) : 0);
-    const update = () => {
-      if (arr.value) {
-        const next = iso(new Date(Date.parse(arr.value) + 864e5));
-        dep.min = next;
-        if (!dep.value || dep.value < next) dep.value = iso(new Date(Date.parse(arr.value) + 7 * 864e5));
-      }
+    const showNights = () => {
       const n = nights();
-      nightsEl.textContent = n > 0 ? m.nights.replace('{n}', n) : '';
+      nightsEl.textContent = n > 0 ? m.nights.replace('{n}', String(n)) : '';
     };
-    arr.addEventListener('change', update);
-    dep.addEventListener('change', update);
-
-    // Coming from a "Book" button: make sure the form is in view (the browser's own jump is unreliable on slow loads).
-    if (location.hash === '#request') addEventListener('load', () => document.getElementById('request')?.scrollIntoView());
+    // Only a new arrival moves the departure; a departure the guest picks is never overwritten.
+    arr.addEventListener('change', () => {
+      if (arr.value) {
+        dep.min = addDays(arr.value, 1);
+        if (!dep.value || dep.value < dep.min) dep.value = addDays(arr.value, 7);
+      }
+      showNights();
+    });
+    dep.addEventListener('change', showNights);
 
     // ?room=room-11 (from a room page) preselects that room.
     const slug = new URLSearchParams(location.search).get('room');
@@ -95,16 +95,21 @@ const msgs = {
 
     f.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const n = nights();
-      if (n < 1) { show(m.dates); dep.focus(); return; }
       const d = new FormData(f);
-      if (d.get('botcheck')) return;
+      // Hidden checkbox only bots tick: pretend success so they move on.
+      if (d.get('botcheck')) { f.reset(); show(m.ok, true); return; }
+      // Dates are optional (general questions), but if given they must form a valid stay.
+      const n = nights();
+      const hasDates = Boolean(arr.value || dep.value);
+      if (hasDates && n < 1) { show(m.dates); (arr.value ? dep : arr).focus(); return; }
       const g = (k: string) => String(d.get(k) || '').trim();
       const guests = `${g('adults')} ${m.adults}${g('children') !== '0' ? ` + ${g('children')} ${m.children}` : ''}`;
-      const subject = `${m.subject}: ${fmt(g('arrival'))} – ${fmt(g('departure'))}, ${guests} – ${g('name')}`;
+      const subject = hasDates
+        ? `${m.subject}: ${fmt(g('arrival'))} – ${fmt(g('departure'))}, ${guests} – ${g('name')}`
+        : `${m.question} – ${g('name')}`;
       const fields: [string, string][] = [
         ['Name', g('name')], ['Email', g('email')], ['Phone', g('phone')],
-        ['Arrival', fmt(g('arrival'))], ['Departure', fmt(g('departure'))], ['Nights', String(n)],
+        ['Arrival', fmt(g('arrival'))], ['Departure', fmt(g('departure'))], ['Nights', n ? String(n) : ''],
         ['Adults', g('adults')], ['Children', g('children')], ['Room', g('room') || '-'],
         ['Language', f.dataset.lang === 'el' ? 'Ελληνικά' : 'English'], ['Message', g('message')],
       ];
@@ -125,14 +130,12 @@ const msgs = {
           }),
         });
         const json = await res.json().catch(() => ({}));
-        if (!res.ok || !json.success) throw new Error(json.message || res.status);
+        if (!res.ok || !json.success) throw new Error();
         f.reset();
         nightsEl.textContent = '';
         show(m.ok, true);
       } catch {
-        status.hidden = false;
-        status.className = 'status err';
-        status.textContent = m.err + ' ';
+        show(m.err + ' ');
         const a = document.createElement('a');
         a.href = mailto;
         a.textContent = f.dataset.to || '';
