@@ -22,10 +22,15 @@ const { wide, label } = Astro.props;
     const update = () => {
       const items = track.children.length;
       const w = (track.firstElementChild as HTMLElement)?.offsetWidth || 1;
-      const idx = Math.round(track.scrollLeft / (w + 30)) + 1;
-      count.textContent = `${Math.min(idx, items)} / ${items}`;
+      // Several cards are visible at once on wide screens: show the visible range ("6–8 / 8"), so the
+      // last position clearly reads as the end instead of looking like cards are left over.
+      const visible = Math.max(1, Math.round((track.clientWidth + 30) / (w + 30)));
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+      const last = atEnd ? items : Math.min(Math.round(track.scrollLeft / (w + 30)) + visible, items);
+      const first = Math.max(1, last - visible + 1);
+      count.textContent = `${first === last ? last : `${first}–${last}`} / ${items}`;
       prev.disabled = track.scrollLeft < 5;
-      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+      next.disabled = atEnd;
     };
     c.querySelectorAll<HTMLButtonElement>('[data-dir]').forEach((b) =>
       b.addEventListener('click', () => {
