@@ -5,8 +5,7 @@
 # Repository settings → Secrets and variables → Actions:
 #   Secrets:   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
 #   Variables: SITE_URL  (https://www.anixi-apartments.gr)
-#              BASE_PATH (/new while previewing in a sub-folder, empty for the live site)
-#              FTP_DIR   (/httpdocs/new/ while previewing, later /httpdocs/)
+#              FTP_DIR   (/httpdocs/)
 #              PREVIEW   (1 while previewing = hidden from Google, 0 for the live site)
 #
 # Big changes (hundreds of files): download the "site-dist" artifact of a run, upload it with WinSCP,
@@ -45,7 +44,6 @@ jobs:
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           PREVIEW: ${{ vars.PREVIEW }}
-          BASE_PATH: ${{ vars.BASE_PATH }}
 
       - name: Keep the built site as a download (for manual WinSCP uploads)
         uses: actions/upload-artifact@v4

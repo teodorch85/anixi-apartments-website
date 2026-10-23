@@ -4,7 +4,7 @@
 // Photos/thumbnails are hashed from their SOURCE file in public/, so the same photo always has the
 // same hash no matter which computer built it.
 //
-// env: FTP_SERVER FTP_USERNAME FTP_PASSWORD FTP_DIR (e.g. /httpdocs/new/)
+// env: FTP_SERVER FTP_USERNAME FTP_PASSWORD FTP_DIR (e.g. /httpdocs/)
 //      DEPLOY_MODE = deploy (default) | seed  (seed = only write the manifest, after a manual WinSCP upload)
 //      MAX_FILES   = refuse to upload more than this many files at once (default 150) – use WinSCP + seed instead
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
