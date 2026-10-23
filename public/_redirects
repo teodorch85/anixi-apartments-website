@@ -45,14 +45,25 @@
 /el/accommodations-2 /el/accommodations/ 301
 /privacy-policy-2 /privacy-policy/ 301
 /el/privacy-policy-2 /el/privacy-policy/ 301
+# exact rules so these skip the /new/* and /*/feed rules below (Cloudflare does not always apply the top-most dynamic rule)
+/accommodations-2/feed /accommodations/ 301
+/accommodations-2/feed/ /accommodations/ 301
+/el/accommodations-2/feed /el/accommodations/ 301
+/el/accommodations-2/feed/ /el/accommodations/ 301
+/privacy-policy-2/feed /privacy-policy/ 301
+/privacy-policy-2/feed/ /privacy-policy/ 301
+/el/privacy-policy-2/feed /el/privacy-policy/ 301
+/el/privacy-policy-2/feed/ /el/privacy-policy/ 301
+/new/accommodations-2 /accommodations/ 301
+/new/accommodations-2/ /accommodations/ 301
+/new/privacy-policy-2 /privacy-policy/ 301
+/new/privacy-policy-2/ /privacy-policy/ 301
 
-# renamed pages: also catches their old sub-addresses (page/2/, feed/) and the /new/ preview copy in one hop
+# renamed pages: any other old sub-address (e.g. page/2/)
 /accommodations-2/* /accommodations/ 301
 /el/accommodations-2/* /el/accommodations/ 301
-/new/accommodations-2/* /accommodations/ 301
 /privacy-policy-2/* /privacy-policy/ 301
 /el/privacy-policy-2/* /el/privacy-policy/ 301
-/new/privacy-policy-2/* /privacy-policy/ 301
 /new/* /:splat 301
 /*/feed /:splat/ 301
 /*/feed/ /:splat/ 301
