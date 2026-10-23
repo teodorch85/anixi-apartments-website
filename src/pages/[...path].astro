@@ -1,7 +1,7 @@
 ---
 /**
  * Every page of the site, in English (/about/) and Greek (/el/about/).
- * Addresses are the same as on the old WordPress site so Google links keep working.
+ * Old WordPress addresses (e.g. /accommodations-2/) are redirected in public/_redirects.
  */
 import Home from '../views/Home.astro';
 import Rooms from '../views/Rooms.astro';
@@ -19,7 +19,7 @@ import { LANGS, ui, type Lang } from '../lib/i18n';
 export function getStaticPaths() {
   const routes: { page: string; props?: Record<string, unknown> }[] = [
     { page: '' },
-    { page: 'accommodations-2' },
+    { page: 'accommodations' },
     ...roomGroups.map((g) => ({ page: g.slug, props: { group: g } })),
     ...rooms.map((r) => ({ page: `accommodation/${r.slug}`, props: { room: r } })),
     { page: 'about' },
@@ -30,7 +30,7 @@ export function getStaticPaths() {
     { page: 'offers' },
     { page: 'location' },
     { page: 'contact' },
-    { page: 'privacy-policy-2' },
+    { page: 'privacy-policy' },
   ];
   return LANGS.flatMap((lang) =>
     routes.map(({ page, props }) => ({
@@ -43,7 +43,7 @@ export function getStaticPaths() {
 const { lang, page, group, room } = Astro.props as { lang: Lang; page: string; group?: any; room?: any };
 ---
 {page === '' && <Home lang={lang} />}
-{page === 'accommodations-2' && <Rooms lang={lang} />}
+{page === 'accommodations' && <Rooms lang={lang} />}
 {group && <Rooms lang={lang} group={group} />}
 {room && <Room lang={lang} room={room} />}
 {page === 'about' && <Page lang={lang} path="/about/" data={about} />}
@@ -58,4 +58,4 @@ const { lang, page, group, room } = Astro.props as { lang: Lang; page: string; g
 {page === 'offers' && <Offers lang={lang} />}
 {page === 'location' && <Location lang={lang} />}
 {page === 'contact' && <Contact lang={lang} />}
-{page === 'privacy-policy-2' && <Page lang={lang} path="/privacy-policy-2/" data={privacy} book={false} />}
+{page === 'privacy-policy' && <Page lang={lang} path="/privacy-policy/" data={privacy} book={false} />}
