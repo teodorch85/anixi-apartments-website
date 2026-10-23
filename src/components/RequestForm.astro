@@ -5,7 +5,7 @@
  * to the booking e-mail. Without a key, or if the service is unreachable, it falls back to opening the
  * guest's own e-mail program with the message ready.
  */
-import { settings, rooms } from '../lib/data';
+import { settings, rooms, PATHS } from '../lib/data';
 import { t, ui, href, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang }
@@ -44,7 +44,7 @@ const msgs = {
   <label><span>{ui('message', lang)}</span><textarea name="message"></textarea></label>
   <input type="checkbox" name="botcheck" hidden />
   <div><button class="btn btn-sand" type="submit">{ui('reqSend', lang)}</button></div>
-  <p class="hint">{key ? ui('reqNote', lang) : ui('formNote', lang)} <a href={href('/privacy-policy/', lang)}>{ui('privacy', lang)}</a></p>
+  <p class="hint">{key ? ui('reqNote', lang) : ui('formNote', lang)} <a href={href(PATHS.privacy, lang)}>{ui('privacy', lang)}</a></p>
   <p class="status" role="status" aria-live="polite" hidden></p>
 </form>
 

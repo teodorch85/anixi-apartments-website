@@ -1,10 +1,10 @@
 import type { APIRoute } from 'astro';
-import { rooms, roomGroups, location } from '../lib/data';
+import { rooms, roomGroups, location, PATHS } from '../lib/data';
 
 export const GET: APIRoute = ({ site }) => {
-  const pages = ['', 'accommodations/', ...roomGroups.map((g) => g.slug + '/'),
+  const pages = ['', PATHS.rooms.slice(1), ...roomGroups.map((g) => g.slug + '/'),
     ...rooms.map((r) => `accommodation/${r.slug}/`), 'about/', 'gallery/', 'swimming-pool/',
-    'restaurant-and-pool-bar/', 'prices/', 'offers/', ...(location.show_in_menu ? ['location/'] : []), 'contact/', 'privacy-policy/'];
+    'restaurant-and-pool-bar/', 'prices/', 'offers/', ...(location.show_in_menu ? ['location/'] : []), 'contact/', PATHS.privacy.slice(1)];
   const url = (p: string) => new URL('/' + p, site).href;
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">

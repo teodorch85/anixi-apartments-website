@@ -55,6 +55,9 @@ export const rooms: Room[] = Object.values(roomFiles)
   })
   .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
+/** Addresses of pages linked from several places (old WordPress "-2" addresses redirect here, see public/_redirects). */
+export const PATHS = { rooms: '/accommodations/', privacy: '/privacy-policy/' } as const;
+
 export const roomGroups = [
   { slug: 'up-to-two-persons', guests: 2, key: 'upTo2' },
   { slug: 'up-to-three-persons', guests: 3, key: 'upTo3' },

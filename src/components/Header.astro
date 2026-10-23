@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { settings, location } from '../lib/data';
+import { settings, location, PATHS } from '../lib/data';
 import { href, ui, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang; path: string }
@@ -18,7 +18,7 @@ const cur = (p: string) => (path === p ? 'page' : undefined);
       <ul>
         <li><a href={h('/')} aria-current={cur('/')}>{ui('home', lang)}</a></li>
         <li class="has-sub">
-          <a class="nav-parent" href={h('/accommodations/')} aria-current={cur('/accommodations/')}>{ui('rooms', lang)}</a>
+          <a class="nav-parent" href={h(PATHS.rooms)} aria-current={cur(PATHS.rooms)}>{ui('rooms', lang)}</a>
           <ul class="sub">
             <li><a href={h('/up-to-two-persons/')}>{ui('upTo2', lang)}</a></li>
             <li><a href={h('/up-to-three-persons/')}>{ui('upTo3', lang)}</a></li>

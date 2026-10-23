@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 import RoomCard from '../components/RoomCard.astro';
 import BookBox from '../components/BookBox.astro';
-import { rooms, roomGroups } from '../lib/data';
+import { rooms, roomGroups, PATHS } from '../lib/data';
 import { href, ui, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang; group?: (typeof roomGroups)[number] }
 const { lang, group } = Astro.props;
 const list = group ? rooms.filter((r) => r.guests === group.guests) : rooms;
-const path = group ? `/${group.slug}/` : '/accommodations/';
+const path = group ? `/${group.slug}/` : PATHS.rooms;
 const title = group ? ui(group.key, lang) : ui('rooms', lang);
 ---
 <Base lang={lang} title={title} path={path}>
@@ -16,7 +16,7 @@ const title = group ? ui(group.key, lang) : ui('rooms', lang);
   <section class="section">
     <div class="wrap">
       <nav class="filters" aria-label={ui('rooms', lang)}>
-        <a href={href('/accommodations/', lang)} aria-current={!group ? 'page' : undefined}>{ui('allRooms', lang)}</a>
+        <a href={href(PATHS.rooms, lang)} aria-current={!group ? 'page' : undefined}>{ui('allRooms', lang)}</a>
         {roomGroups.map((g) => (
           <a href={href(`/${g.slug}/`, lang)} aria-current={group?.slug === g.slug ? 'page' : undefined}>{ui(g.key, lang)}</a>
         ))}
