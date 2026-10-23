@@ -11,10 +11,13 @@ RewriteRule ^(wp-admin|wp-login\.php|xmlrpc\.php|wp-json)(/.*)?$ - [F,L]
 
 # Old WordPress addresses -> new pages (keeps Google links working)
 RewriteRule ^home/?$ / [L,R=301]
+# Renamed pages (WordPress "-2" addresses), with any sub-address such as page/2/ or feed/
+RewriteRule ^(new/)?(el/)?accommodations-2(/.*)?$ /$2accommodations/ [L,R=301]
+RewriteRule ^(new/)?(el/)?privacy-policy-2(/.*)?$ /$2privacy-policy/ [L,R=301]
 RewriteRule ^(.+/)?feed/?$ /$1 [L,R=301]
 RewriteRule ^accommodation-category/(up-to-(two|three|four)-persons)/?$ /$1/ [L,R=301]
-RewriteRule ^accommodation-facility/ /accommodations-2/ [L,R=301]
-RewriteRule ^(up-to-[a-z]+-persons|accommodations-2)/page/[0-9]+/?$ /$1/ [L,R=301]
+RewriteRule ^accommodation-facility/ /accommodations/ [L,R=301]
+RewriteRule ^(up-to-[a-z]+-persons)/page/[0-9]+/?$ /$1/ [L,R=301]
 RewriteRule ^gallery/category/ /gallery/ [L,R=301]
 RewriteRule ^pool-bar/?$ /restaurant-and-pool-bar/ [L,R=301]
 RewriteRule ^accommodation/room-201-2-2-2/?$ /accommodation/room-204/ [L,R=301]

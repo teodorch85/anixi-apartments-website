@@ -4,7 +4,7 @@ import HeroVideo from '../components/HeroVideo.astro';
 import Carousel from '../components/Carousel.astro';
 import Reviews from '../components/Reviews.astro';
 import RoomCard from '../components/RoomCard.astro';
-import { home, rooms, reviews, thumb } from '../lib/data';
+import { home, rooms, reviews, thumb, PATHS } from '../lib/data';
 import { t, href, ui, type Lang } from '../lib/i18n';
 
 interface Props { lang: Lang }
@@ -50,7 +50,7 @@ const strip = (s: string) => s.replace(/<[^>]+>/g, '').slice(0, 160);
           <h2>{t(home.rooms.title, lang)}</h2>
           <p>{t(home.rooms.text, lang)}</p>
         </div>
-        <div style="text-align:right"><a class="btn" href={h('/accommodations/')}>{ui('allRooms', lang)}</a></div>
+        <div style="text-align:right"><a class="btn" href={h(PATHS.rooms)}>{ui('allRooms', lang)}</a></div>
       </div>
       <Carousel label={t(home.rooms.title, lang)}>
         {rooms.map((r) => <RoomCard room={r} lang={lang} />)}

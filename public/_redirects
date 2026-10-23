@@ -42,19 +42,21 @@
 /search-availability /contact/ 301
 /search-results /contact/ 301
 /accommodations-2 /accommodations/ 301
-/accommodations-2/ /accommodations/ 301
 /el/accommodations-2 /el/accommodations/ 301
-/el/accommodations-2/ /el/accommodations/ 301
 /privacy-policy-2 /privacy-policy/ 301
-/privacy-policy-2/ /privacy-policy/ 301
 /el/privacy-policy-2 /el/privacy-policy/ 301
-/el/privacy-policy-2/ /el/privacy-policy/ 301
 
+# renamed pages: also catches their old sub-addresses (page/2/, feed/) and the /new/ preview copy in one hop
+/accommodations-2/* /accommodations/ 301
+/el/accommodations-2/* /el/accommodations/ 301
+/new/accommodations-2/* /accommodations/ 301
+/privacy-policy-2/* /privacy-policy/ 301
+/el/privacy-policy-2/* /el/privacy-policy/ 301
+/new/privacy-policy-2/* /privacy-policy/ 301
 /new/* /:splat 301
 /*/feed /:splat/ 301
 /*/feed/ /:splat/ 301
 /accommodation-facility/* /accommodations/ 301
-/accommodations-2/page/* /accommodations/ 301
 /up-to-two-persons/page/* /up-to-two-persons/ 301
 /up-to-three-persons/page/* /up-to-three-persons/ 301
 /up-to-four-persons/page/* /up-to-four-persons/ 301

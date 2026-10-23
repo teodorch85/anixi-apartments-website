@@ -13,13 +13,13 @@ import Contact from '../views/Contact.astro';
 import Offers from '../views/Offers.astro';
 import Location from '../views/Location.astro';
 import Reviews from '../components/Reviews.astro';
-import { rooms, roomGroups, about, pool, restaurant, privacy, reviews } from '../lib/data';
+import { rooms, roomGroups, about, pool, restaurant, privacy, reviews, PATHS } from '../lib/data';
 import { LANGS, ui, type Lang } from '../lib/i18n';
 
 export function getStaticPaths() {
   const routes: { page: string; props?: Record<string, unknown> }[] = [
     { page: '' },
-    { page: 'accommodations' },
+    { page: PATHS.rooms.slice(1, -1) },
     ...roomGroups.map((g) => ({ page: g.slug, props: { group: g } })),
     ...rooms.map((r) => ({ page: `accommodation/${r.slug}`, props: { room: r } })),
     { page: 'about' },
@@ -30,7 +30,7 @@ export function getStaticPaths() {
     { page: 'offers' },
     { page: 'location' },
     { page: 'contact' },
-    { page: 'privacy-policy' },
+    { page: PATHS.privacy.slice(1, -1) },
   ];
   return LANGS.flatMap((lang) =>
     routes.map(({ page, props }) => ({
@@ -43,7 +43,7 @@ export function getStaticPaths() {
 const { lang, page, group, room } = Astro.props as { lang: Lang; page: string; group?: any; room?: any };
 ---
 {page === '' && <Home lang={lang} />}
-{page === 'accommodations' && <Rooms lang={lang} />}
+{page === PATHS.rooms.slice(1, -1) && <Rooms lang={lang} />}
 {group && <Rooms lang={lang} group={group} />}
 {room && <Room lang={lang} room={room} />}
 {page === 'about' && <Page lang={lang} path="/about/" data={about} />}
@@ -58,4 +58,4 @@ const { lang, page, group, room } = Astro.props as { lang: Lang; page: string; g
 {page === 'offers' && <Offers lang={lang} />}
 {page === 'location' && <Location lang={lang} />}
 {page === 'contact' && <Contact lang={lang} />}
-{page === 'privacy-policy' && <Page lang={lang} path="/privacy-policy/" data={privacy} book={false} />}
+{page === PATHS.privacy.slice(1, -1) && <Page lang={lang} path={PATHS.privacy} data={privacy} book={false} />}
