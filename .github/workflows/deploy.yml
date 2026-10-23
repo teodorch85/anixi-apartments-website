@@ -1,5 +1,6 @@
-# Builds the site and uploads the changed files to DNHOST by FTP after every change
-# (including edits made in Pages CMS).
+# OLD HOSTING – manual only. The live site is now on Cloudflare Workers (wrangler.jsonc),
+# which builds and publishes every push by itself. Run this by hand only to update the old
+# DNHOST copy (e.g. if the domain is ever pointed back there).
 #
 # Repository settings → Secrets and variables → Actions:
 #   Secrets:   FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
@@ -13,8 +14,6 @@
 name: Build & deploy
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       mode:
