@@ -7,15 +7,12 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/thumbs.mjs && node scripts/base-path.mjs",
+    "build": "astro build && node scripts/thumbs.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.6",
+    "astro": "^7.4.1",
     "sharp": "^0.35.5"
-  },
-  "allowScripts": {
-    "esbuild": true
   }
 }
