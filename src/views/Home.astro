@@ -50,7 +50,7 @@ const strip = (s: string) => s.replace(/<[^>]+>/g, '').slice(0, 160);
           <h2>{t(home.rooms.title, lang)}</h2>
           <p>{t(home.rooms.text, lang)}</p>
         </div>
-        <div style="text-align:right"><a class="btn" href={h('/accommodations-2/')}>{ui('allRooms', lang)}</a></div>
+        <div style="text-align:right"><a class="btn" href={h('/accommodations/')}>{ui('allRooms', lang)}</a></div>
       </div>
       <Carousel label={t(home.rooms.title, lang)}>
         {rooms.map((r) => <RoomCard room={r} lang={lang} />)}

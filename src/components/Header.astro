@@ -18,7 +18,7 @@ const cur = (p: string) => (path === p ? 'page' : undefined);
       <ul>
         <li><a href={h('/')} aria-current={cur('/')}>{ui('home', lang)}</a></li>
         <li class="has-sub">
-          <a class="nav-parent" href={h('/accommodations-2/')} aria-current={cur('/accommodations-2/')}>{ui('rooms', lang)}</a>
+          <a class="nav-parent" href={h('/accommodations/')} aria-current={cur('/accommodations/')}>{ui('rooms', lang)}</a>
           <ul class="sub">
             <li><a href={h('/up-to-two-persons/')}>{ui('upTo2', lang)}</a></li>
             <li><a href={h('/up-to-three-persons/')}>{ui('upTo3', lang)}</a></li>

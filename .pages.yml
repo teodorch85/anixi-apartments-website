@@ -110,7 +110,7 @@ content:
     fields:
       - name: availability
         label: "📅 Σημείωση διαθεσιμότητας"
-        description: "Π.χ. «Κλεισμένο έως 15/08» ή «Διαθέσιμο από 01/09». Εμφανίζεται στην κάρτα και στη σελίδα του δωματίου. Αφήστε κενό αν δεν χρειάζεται. 👁 Όλα τα δωμάτια: https://www.anixi-apartments.gr/accommodations-2/"
+        description: "Π.χ. «Κλεισμένο έως 15/08» ή «Διαθέσιμο από 01/09». Εμφανίζεται στην κάρτα και στη σελίδα του δωματίου. Αφήστε κενό αν δεν χρειάζεται. 👁 Όλα τα δωμάτια: https://www.anixi-apartments.gr/accommodations/"
         component: t_string
       - { name: name, label: Όνομα δωματίου, component: t_string, required: true, description: "Π.χ. «Στούντιο 101» / «Studio 101»" }
       - { name: number, label: Αριθμός δωματίου, type: string, required: true }
@@ -315,7 +315,7 @@ content:
         path: src/data/privacy.json
         format: json
         fields:
-          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/privacy-policy-2/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
+          - { name: title, label: Τίτλος, component: t_string, description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/privacy-policy/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)" }
           - { name: body, label: Κείμενο, component: t_rich }
 
   # ================================================================ Κριτικές
