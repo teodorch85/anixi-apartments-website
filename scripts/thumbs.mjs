@@ -1,9 +1,12 @@
 // After `astro build`: make small WebP copies of every uploaded photo (used for cards, grids, banners)
 // dist/media/x/y.jpg -> dist/_img/480/media/x/y.webp and dist/_img/960/media/x/y.webp
 // Also shrinks any oversized original (e.g. a 6000px phone photo uploaded in the editor) to 2400px.
-import { readdir, mkdir, stat } from 'node:fs/promises';
+import { readdir, mkdir, stat, writeFile } from 'node:fs/promises';
 import { join, dirname, relative, extname } from 'node:path';
 import sharp from 'sharp';
+
+// Windows: libvips' cache keeps source files open, so overwriting an original fails. Disable it.
+sharp.cache(false);
 
 const DIST = 'dist';
 const MEDIA = join(DIST, 'media');
@@ -31,7 +34,7 @@ for await (const file of walk(MEDIA)) {
   if ((meta.width ?? 0) > MAX_ORIGINAL || (meta.height ?? 0) > MAX_ORIGINAL) {
     const buf = await sharp(file).rotate().resize({ width: MAX_ORIGINAL, height: MAX_ORIGINAL, fit: 'inside' })
       .toFormat(extname(file).toLowerCase() === '.png' ? 'png' : 'jpeg', { quality: 82 }).toBuffer();
-    await sharp(buf).toFile(file);
+    await writeFile(file, buf);
   }
   n++;
 }

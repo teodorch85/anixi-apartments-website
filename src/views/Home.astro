@@ -11,14 +11,13 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const h = (p: string) => href(p, lang);
 const shownReviews = reviews.items.filter((r) => r.show && r.text).slice(0, 8);
-const strip = (s: string) => s.replace(/<[^>]+>/g, '').slice(0, 160);
 ---
-<Base lang={lang} title={t(home.intro.title, lang)} path="/" description={strip(t(home.intro.text, lang))} image={home.hero.poster}>
+<Base lang={lang} title={t(home.intro.title, lang)} fullTitle={t(home.seo.title, lang)} path="/" description={t(home.seo.description, lang)} image={home.hero.poster}>
   <HeroVideo hd={home.hero.video_hd} sd={home.hero.video_sd} poster={home.hero.poster} alt={t(home.intro.title, lang)} />
 
   <section class="section">
     <div class="wrap split">
-      <img class="landscape" src={thumb(home.intro.image, 960)} alt="" loading="lazy" width="960" height="720" />
+      <img class="landscape" src={thumb(home.intro.image, 960)} alt={t(home.seo.intro_alt, lang)} loading="lazy" width="960" height="720" />
       <div>
         <h2>{t(home.intro.title, lang)}</h2>
         <div class="prose" set:html={t(home.intro.text, lang)} />
@@ -77,7 +76,7 @@ const strip = (s: string) => s.replace(/<[^>]+>/g, '').slice(0, 160);
       <div class="wrap">
         <h2 class="center">{t(home.offers.title, lang)}</h2>
         <div class="split" style="margin-top:40px">
-          <img class="landscape" src={thumb(home.offers.image, 960)} alt="" loading="lazy" width="960" height="720" />
+          <img class="landscape" src={thumb(home.offers.image, 960)} alt={t(home.offers.title, lang)} loading="lazy" width="960" height="720" />
           <div>
             <div class="prose" set:html={t(home.offers.text, lang)} />
             <a class="btn" href={h('/offers/')}>{t(home.offers.button, lang)}</a>

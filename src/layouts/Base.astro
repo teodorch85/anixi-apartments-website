@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import Lightbox from '../components/Lightbox.astro';
 import ContactBar from '../components/ContactBar.astro';
 import Icon from '../components/Icon.astro';
-import { settings } from '../lib/data';
+import { settings, home } from '../lib/data';
 import { t, type Lang } from '../lib/i18n';
 
 interface Props {
@@ -15,10 +15,11 @@ interface Props {
   path: string;          // language-neutral path, e.g. '/about/'
   image?: string;
   noindex?: boolean;
+  fullTitle?: string;   // overrides the generated <title>
 }
-const { lang, title, description = '', path, image, noindex } = Astro.props;
+const { lang, title, description = '', path, image, noindex, fullTitle: titleOverride } = Astro.props;
 const site = Astro.site!.origin;
-const fullTitle = path === '/' ? `${settings.name} – ${t(settings.tagline, lang)}` : `${title} – ${settings.name}`;
+const fullTitle = titleOverride ?? (path === '/' ? `${settings.name} – ${t(settings.tagline, lang)}` : `${title} – ${settings.name}`);
 const enUrl = site + path;
 const elUrl = site + '/el' + path;
 ---
@@ -46,7 +47,14 @@ const elUrl = site + '/el' + path;
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org', '@type': 'LodgingBusiness', name: settings.name,
     url: site + '/', telephone: settings.phones[0]?.number, email: settings.booking_email,
+    image: site + home.hero.poster, logo: site + settings.logo,
     address: { '@type': 'PostalAddress', addressLocality: 'Sisi', addressRegion: 'Crete', postalCode: '72400', addressCountry: 'GR' },
+    geo: { '@type': 'GeoCoordinates', latitude: 35.30797, longitude: 25.51239 },
+    priceRange: settings.price_range, currenciesAccepted: 'EUR',
+    checkinTime: '15:00', checkoutTime: '11:00',
+    amenityFeature: ['Swimming pool', 'Restaurant', 'Pool bar', 'Free Wi-Fi', 'Sea view', 'Kitchenette']
+      .map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })),
+    sameAs: [settings.facebook, settings.tripadvisor].filter(Boolean),
   })} />
 </head>
 <body>
