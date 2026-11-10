@@ -4,6 +4,20 @@
     "video_sd": "/media/home/hero-2025-60-720.mp4",
     "poster": "/media/home/hero-2025-60-poster.jpg"
   },
+  "seo": {
+    "title": {
+      "en": "Anixi Apartments | Sea View Studios & Apartments in Sisi, Crete",
+      "el": "Anixi Apartments | Στούντιο & Διαμερίσματα με θέα θάλασσα στη Σίσι, Κρήτη"
+    },
+    "description": {
+      "en": "Family-run sea view studios and apartments in Sisi, Crete, 5 minutes' walk from the fishing village. Swimming pool, restaurant and pool bar, free Wi-Fi. Book direct.",
+      "el": "Οικογενειακά στούντιο και διαμερίσματα με θέα θάλασσα στη Σίσι Κρήτης, 5 λεπτά από το ψαροχώρι. Πισίνα, εστιατόριο & pool bar, δωρεάν Wi-Fi. Κλείστε απευθείας."
+    },
+    "intro_alt": {
+      "en": "Aerial view of Anixi Apartments and the sea in Sisi, Crete",
+      "el": "Αεροφωτογραφία των Anixi Apartments και της θάλασσας στη Σίσι, Κρήτη"
+    }
+  },
   "intro": {
     "title": {
       "en": "Anixi Apartments. The ideal place to stay in Sisi, Crete",
