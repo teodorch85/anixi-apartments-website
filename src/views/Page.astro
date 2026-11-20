@@ -40,8 +40,8 @@ const extra = data.extra ? t(data.extra, lang) : '';
   {data.gallery && data.gallery.length > 0 && (
     <section class="section-sm">
       <div class="wrap masonry">
-        {data.gallery.map((p) => (
-          <a href={p} data-lightbox="page"><img src={thumb(p, 960)} alt={title} loading="lazy" /></a>
+        {data.gallery.map((p, i, all) => (
+          <a href={p} data-lightbox="page"><img src={thumb(p, 960)} alt={`${title} – ${i + 1}/${all.length}`} loading="lazy" /></a>
         ))}
       </div>
     </section>

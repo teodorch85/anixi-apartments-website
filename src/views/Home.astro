@@ -10,16 +10,19 @@ import { t, href, ui, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const h = (p: string) => href(p, lang);
+// The seo block is optional: without it the page falls back to the intro title and text.
+const seo = (home as { seo?: Partial<Record<'title' | 'description' | 'intro_alt', Parameters<typeof t>[0]>> }).seo ?? {};
+const strip = (s: string) => s.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 155);
 const shownReviews = reviews.items.filter((r) => r.show && r.text).slice(0, 8);
 ---
-<Base lang={lang} title={t(home.intro.title, lang)} fullTitle={t(home.seo.title, lang)} path="/" description={t(home.seo.description, lang)} image={home.hero.poster}>
+<Base lang={lang} title={t(home.intro.title, lang)} fullTitle={seo.title ? t(seo.title, lang) : undefined} path="/" description={seo.description ? t(seo.description, lang) : strip(t(home.intro.text, lang))} image={home.hero.poster}>
   <HeroVideo lang={lang} hd={home.hero.video_hd} sd={home.hero.video_sd} poster={home.hero.poster} alt={t(home.intro.title, lang)} />
 
   <section class="section">
     <div class="wrap split">
-      <img class="landscape" src={thumb(home.intro.image, 960)} alt={t(home.seo.intro_alt, lang)} loading="lazy" width="960" height="720" />
+      <img class="landscape" src={thumb(home.intro.image, 960)} alt={t(seo.intro_alt ?? home.intro.title, lang)} loading="lazy" width="960" height="720" />
       <div>
-        <h2>{t(home.intro.title, lang)}</h2>
+        <h1 class="h2">{t(home.intro.title, lang)}</h1>
         <div class="prose" set:html={t(home.intro.text, lang)} />
         <a class="btn" href={h('/about/')}>{t(home.intro.button, lang)}</a>
       </div>

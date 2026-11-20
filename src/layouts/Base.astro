@@ -5,7 +5,8 @@ import Footer from '../components/Footer.astro';
 import Lightbox from '../components/Lightbox.astro';
 import ContactBar from '../components/ContactBar.astro';
 import Icon from '../components/Icon.astro';
-import { settings, home } from '../lib/data';
+import { settings, home, rooms, reviews } from '../lib/data';
+import { AMENITIES } from '../lib/amenities';
 import { t, type Lang } from '../lib/i18n';
 
 interface Props {
@@ -20,6 +21,12 @@ interface Props {
 const { lang, title, description = '', path, image, noindex, fullTitle: titleOverride } = Astro.props;
 const site = Astro.site!.origin;
 const fullTitle = titleOverride ?? (path === '/' ? `${settings.name} – ${t(settings.tagline, lang)}` : `${title} – ${settings.name}`);
+// Structured data comes from the editable data, so it never drifts from what the pages say.
+const pin = settings.map_embed.match(/!2d(-?[\d.]+)!3d(-?[\d.]+)/);
+const amenityNames = [
+  ...home.facilities.items.map((f) => f.label.en),
+  ...new Set(rooms.flatMap((r) => r.amenities).map((k) => AMENITIES[k]?.label.en).filter(Boolean)),
+];
 const enUrl = site + path;
 const elUrl = site + '/el' + path;
 ---
@@ -49,12 +56,12 @@ const elUrl = site + '/el' + path;
     url: site + '/', telephone: settings.phones[0]?.number, email: settings.booking_email,
     image: site + home.hero.poster, logo: site + settings.logo,
     address: { '@type': 'PostalAddress', addressLocality: 'Sisi', addressRegion: 'Crete', postalCode: '72400', addressCountry: 'GR' },
-    geo: { '@type': 'GeoCoordinates', latitude: 35.30797, longitude: 25.51239 },
+    geo: pin ? { '@type': 'GeoCoordinates', latitude: Number(pin[2]), longitude: Number(pin[1]) } : undefined,
     priceRange: settings.price_range, currenciesAccepted: 'EUR',
-    checkinTime: '15:00', checkoutTime: '11:00',
-    amenityFeature: ['Swimming pool', 'Restaurant', 'Pool bar', 'Free Wi-Fi', 'Sea view', 'Kitchenette']
+    checkinTime: settings.checkin || undefined, checkoutTime: settings.checkout || undefined,
+    amenityFeature: amenityNames
       .map((name) => ({ '@type': 'LocationFeatureSpecification', name, value: true })),
-    sameAs: [settings.facebook, settings.tripadvisor].filter(Boolean),
+    sameAs: [settings.facebook, reviews.tripadvisor_url].filter(Boolean),
   })} />
 </head>
 <body>

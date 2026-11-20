@@ -153,6 +153,14 @@ content:
         path: src/data/home.json
         format: json
         fields:
+          - name: seo
+            label: "Google (τίτλος & περιγραφή αρχικής)"
+            description: "Τι δείχνει η Google στα αποτελέσματα αναζήτησης. Περιγραφή έως ~155 χαρακτήρες. Αν μείνουν κενά, χρησιμοποιούνται ο τίτλος και το κείμενο της εισαγωγής."
+            type: object
+            fields:
+              - { name: title, label: Τίτλος στη Google, component: t_string }
+              - { name: description, label: Περιγραφή στη Google, component: t_string }
+              - { name: intro_alt, label: "Περιγραφή φωτογραφίας εισαγωγής (για τυφλούς & Google)", component: t_string }
           - name: intro
             description: "👁 Δείτε τη σελίδα: https://www.anixi-apartments.gr/  (οι αλλαγές εμφανίζονται 1–2 λεπτά μετά την Αποθήκευση)"
             label: Εισαγωγή (κάτω από το βίντεο)
@@ -376,6 +384,9 @@ content:
           - { name: form_key, label: "Κλειδί φόρμας διαθεσιμότητας (Web3Forms)", type: string, description: "Με αυτό το κλειδί τα αιτήματα της φόρμας «Ζητήστε διαθεσιμότητα» έρχονται κατευθείαν στο e-mail κρατήσεων. Το παίρνετε δωρεάν στο web3forms.com (γράφετε το e-mail κρατήσεων και σας έρχεται με e-mail). Αν μείνει κενό, η φόρμα ανοίγει την εφαρμογή e-mail του επισκέπτη." }
           - { name: eu_banner, label: Banner ΕΣΠΑ, type: image, options: { path: public/media/site } }
           - { name: eu_pdf, label: Αρχείο PDF ΕΣΠΑ, type: file, options: { path: public/media/site } }
+          - { name: price_range, label: "Εύρος τιμών (για Google)", type: string, description: "Π.χ. €45–€125 per room per night. Το βλέπει η Google, όχι οι επισκέπτες." }
+          - { name: checkin, label: "Ώρα check-in (για Google)", type: string, description: "Μορφή ΩΩ:ΛΛ, π.χ. 15:00" }
+          - { name: checkout, label: "Ώρα check-out (για Google)", type: string, description: "Μορφή ΩΩ:ΛΛ, π.χ. 11:00" }
 
 settings:
   content:

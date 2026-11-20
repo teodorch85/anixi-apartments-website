@@ -28,7 +28,7 @@ img, video { max-width: 100%; display: block; }
 a { color: inherit; }
 h1, h2, h3, h4 { color: var(--ink); font-weight: 200; letter-spacing: 0; line-height: 1.2; margin: 0 0 .6em; }
 h1 { font-size: clamp(30px, 4.4vw, 52px); }
-h2 { font-size: clamp(26px, 3vw, 34px); }
+h2, h1.h2 { font-size: clamp(26px, 3vw, 34px); }
 h3 { font-size: 24px; }
 h4 { font-size: 18px; font-weight: 400; }
 p { margin: 0 0 1.1em; }

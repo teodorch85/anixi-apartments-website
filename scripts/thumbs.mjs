@@ -12,6 +12,8 @@ const DIST = 'dist';
 const MEDIA = join(DIST, 'media');
 const WIDTHS = [480, 960];
 const MAX_ORIGINAL = 2400;
+// A shrunk original keeps its own format, so the bytes always match the file extension.
+const FORMAT = { '.png': 'png', '.webp': 'webp' };
 
 async function* walk(dir) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
@@ -33,7 +35,7 @@ for await (const file of walk(MEDIA)) {
   }
   if ((meta.width ?? 0) > MAX_ORIGINAL || (meta.height ?? 0) > MAX_ORIGINAL) {
     const buf = await sharp(file).rotate().resize({ width: MAX_ORIGINAL, height: MAX_ORIGINAL, fit: 'inside' })
-      .toFormat(extname(file).toLowerCase() === '.png' ? 'png' : 'jpeg', { quality: 82 }).toBuffer();
+      .toFormat(FORMAT[extname(file).toLowerCase()] ?? 'jpeg', { quality: 82 }).toBuffer();
     await writeFile(file, buf);
   }
   n++;

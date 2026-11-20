@@ -8,7 +8,7 @@ const { lang } = Astro.props;
   <span class="lb-count"></span>
   <button class="lb-close" aria-label={ui('close', lang)}>×</button>
   <button class="lb-prev" aria-label={ui('prev', lang)}>‹</button>
-  <img alt={ui('photos', lang)} hidden />
+  <img alt={ui('photos', lang)} data-alt={ui('photos', lang)} hidden />
   <button class="lb-next" aria-label={ui('next', lang)}>›</button>
 </div>
 
@@ -22,7 +22,7 @@ const { lang } = Astro.props;
   const show = (n: number) => {
     i = (n + items.length) % items.length;
     img.src = items[i].href;
-    img.alt = items[i].querySelector('img')?.alt || img.alt;
+    img.alt = items[i].querySelector('img')?.alt || img.dataset.alt || '';
     img.hidden = false;
     count.textContent = `${i + 1} / ${items.length}`;
   };
