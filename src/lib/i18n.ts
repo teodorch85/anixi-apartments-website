@@ -105,6 +105,8 @@ export const UI = {
   close: { en: 'Close', el: 'Κλείσιμο' },
   prev: { en: 'Previous', el: 'Προηγούμενο' },
   next: { en: 'Next', el: 'Επόμενο' },
+  pauseVideo: { en: 'Pause video', el: 'Παύση βίντεο' },
+  playVideo: { en: 'Play video', el: 'Αναπαραγωγή βίντεο' },
 } satisfies Record<string, T>;
 
 export function ui(key: keyof typeof UI, lang: Lang, vars: Record<string, string | number> = {}): string {

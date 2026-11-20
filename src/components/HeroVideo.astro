@@ -2,35 +2,83 @@
 /**
  * Full-width hero: the poster photo shows instantly, the video fades in only once the browser
  * can play it through without stopping. Phones / slow connections get the 720p file,
- * data-saver or reduced-motion users keep the photo.
+ * data-saver / 2G users keep the photo. A pause button lets anyone stop the motion
+ * (the choice is remembered on that device).
  */
-interface Props { hd: string; sd: string; poster: string; alt?: string }
-const { hd, sd, poster, alt = '' } = Astro.props;
+import { ui, type Lang } from '../lib/i18n';
+interface Props { hd: string; sd: string; poster: string; alt?: string; lang: Lang }
+const { hd, sd, poster, alt = '', lang } = Astro.props;
 ---
 <section class="hero" style={`background-image:url('${poster}')`} aria-label={alt}>
   <video muted loop playsinline preload="none" poster={poster} data-hd={hd} data-sd={sd} aria-hidden="true"></video>
+  <button class="hero-toggle" type="button" hidden
+    data-pause={ui('pauseVideo', lang)} data-play={ui('playVideo', lang)} aria-label={ui('pauseVideo', lang)}>
+    <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+    <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+  </button>
 </section>
 
 <style>
   .hero video { opacity: 0; transition: opacity 1.2s ease; }
   .hero video.ready { opacity: 1; }
+  .hero-toggle {
+    position: absolute; right: 18px; bottom: 18px; z-index: 2;
+    width: 44px; height: 44px; border-radius: 50%; border: 0; padding: 0; cursor: pointer;
+    display: grid; place-items: center; color: #fff; background: rgba(20, 22, 35, .45);
+    backdrop-filter: blur(4px); transition: background .2s ease;
+  }
+  .hero-toggle[hidden] { display: none; }
+  .hero-toggle:hover { background: rgba(20, 22, 35, .7); }
+  .hero-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .hero-toggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .hero-toggle .i-play { fill: currentColor; stroke-width: 1.5; }
+  .hero-toggle .i-play, .hero-toggle.paused .i-pause { display: none; }
+  .hero-toggle.paused .i-play { display: block; }
+  @media (max-width: 700px) { .hero-toggle { right: 12px; bottom: 12px; } }
 </style>
 
 <script>
   const v = document.querySelector<HTMLVideoElement>('.hero video');
-  if (v) {
+  const btn = document.querySelector<HTMLButtonElement>('.hero-toggle');
+  if (v && btn) {
+    const KEY = 'heroVideoPaused';
+    const remember = (paused: boolean) => { try { localStorage.setItem(KEY, paused ? '1' : '0'); } catch {} };
+    let pausedBefore = false;
+    try { pausedBefore = localStorage.getItem(KEY) === '1'; } catch {}
+
     const conn = (navigator as any).connection;
-    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const saveData = conn?.saveData;
     const slow = conn && /(^|-)2g$|^slow-2g$/.test(conn.effectiveType || '');
-    if (!reduce && !saveData && !slow) {
-      const small = innerWidth < 900 || conn?.effectiveType === '3g';
-      v.src = (small ? v.dataset.sd : v.dataset.hd) || '';
-      v.preload = 'auto';
-      v.addEventListener('canplaythrough', () => {
-        v.play().then(() => v.classList.add('ready')).catch(() => {});
-      }, { once: true });
-      v.load();
+
+    const show = (paused: boolean) => {
+      btn.hidden = false;
+      btn.classList.toggle('paused', paused);
+      btn.setAttribute('aria-label', (paused ? btn.dataset.play : btn.dataset.pause) || '');
+    };
+    let loaded = false;
+    const start = () => {
+      if (!loaded) {
+        loaded = true;
+        const small = innerWidth < 900 || conn?.effectiveType === '3g';
+        v.src = (small ? v.dataset.sd : v.dataset.hd) || '';
+        v.preload = 'auto';
+        v.addEventListener('canplaythrough', () => {
+          v.play().then(() => { v.classList.add('ready'); show(false); }).catch(() => show(true));
+        }, { once: true });
+        v.load();
+      } else {
+        v.play().then(() => { v.classList.add('ready'); show(false); }).catch(() => {});
+      }
+    };
+
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('paused')) { remember(false); start(); }
+      else { v.pause(); remember(true); show(true); }
+    });
+
+    if (!saveData && !slow) {
+      if (pausedBefore) show(true);   // photo stays; the play button starts the video
+      else start();
     }
   }
 </script>

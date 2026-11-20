@@ -13,7 +13,7 @@ const h = (p: string) => href(p, lang);
 const shownReviews = reviews.items.filter((r) => r.show && r.text).slice(0, 8);
 ---
 <Base lang={lang} title={t(home.intro.title, lang)} fullTitle={t(home.seo.title, lang)} path="/" description={t(home.seo.description, lang)} image={home.hero.poster}>
-  <HeroVideo hd={home.hero.video_hd} sd={home.hero.video_sd} poster={home.hero.poster} alt={t(home.intro.title, lang)} />
+  <HeroVideo lang={lang} hd={home.hero.video_hd} sd={home.hero.video_sd} poster={home.hero.poster} alt={t(home.intro.title, lang)} />
 
   <section class="section">
     <div class="wrap split">
